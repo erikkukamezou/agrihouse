@@ -1,16 +1,16 @@
-# アプリの概要(h1) <br>
+# アプリの概要 <br>
 経験からの判断だけでなく、日々の業務を数値化や見えるかをすることによって
-初心者でも自分の作物の質や収穫量を一定の基準を保つためのツール。
+初心者でも自分の作物の品質や収穫量を一定の基準を保つためのツール。
 
 
 # 開発言語 <br>
-Ruby 2.6.5
-Rails 5.2.5
-psql(PostgreSQL) 13.3-1
+Ruby 2.6.5 <br>
+Rails 5.2.5 <br>
+psql(PostgreSQL) 13.3-1 <br>
 
 # 就業Termの技術 <br>
-devise <br>
-Ajaxを使ったコメント機能 <br>
+・devise <br>
+・Ajaxを使ったコメント機能 <br>
 
 # カリキュラム外の技術 <br>
 ・FullCalender <br>
