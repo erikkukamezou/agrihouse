@@ -34,21 +34,29 @@ Ruby 2.6.5
 Rails 5.2.5
 psql(PostgreSQL) 13.3-1
 
-アプリ内の技術（カリキュラム）
+就業Termの技術
 devise
 Ajaxを使ったコメント機能
 
-カリキュラム外
-フルカレンダーの実装
-一か月のサイクルをみて、日々のタスクを判断していくので、ぱっと見てわかりやすくするために、このgemを導入。
+カリキュラム外の技術
+・FullCalender
 gem 'jquery-rails', '4.3.3'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+フルカレンダーの実装
+一か月のサイクルをみて、日々のタスクを判断していくので、ぱっと見てわかりやすくするために、このgemを導入
+
+・gem 'chartkick'
+生産管理機能、コスト管理機能に記録した数値を基にグラフ表示
+いろんなグラフの種類を選べるため導入
+
+・gem 'ransack'
+観察日記や日々のことを記録していくので、情報が多くなるとほしい時にすぐ表示ができないので検索できるようにするため導入
 
 実行手順
-git clone git@github.com:erikkukamezou/agrihouse.git
-cd agrihouse
-bundle install
-rails db:create db:migrate
-rails db:seed
-rails s
+$ git clone git@github.com:erikkukamezou/agripark.git
+$ cd agripark
+$ bundle install
+$ rails db:create db:migrate
+$ rails db:seed
+$ rails s
