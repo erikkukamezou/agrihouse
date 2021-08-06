@@ -37,3 +37,21 @@ $ rails db:create db:migrate
 $ rails db:seed
 $ rails s
 ```
+
+#カタログ設計
+https://docs.google.com/spreadsheets/d/1ME-1gXcocqcyixC3rx1pKhO4gj_QeFLSpys9BUkpzPg/edit?usp=sharing
+
+
+#テーブル設計
+https://docs.google.com/spreadsheets/d/1ME-1gXcocqcyixC3rx1pKhO4gj_QeFLSpys9BUkpzPg/edit?usp=sharing
+
+
+#ワイヤーフレーム
+https://drive.google.com/file/d/1MFA8nBl1ddbEk1WGKNoCWk8-K7k0pzX7/view?usp=sharing
+
+
+#ER図
+https://drive.google.com/file/d/1MFA8nBl1ddbEk1WGKNoCWk8-K7k0pzX7/view?usp=sharing
+
+#画面遷移図
+https://drive.google.com/file/d/1MFA8nBl1ddbEk1WGKNoCWk8-K7k0pzX7/view?usp=sharing
