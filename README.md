@@ -38,20 +38,20 @@ $ rails db:seed
 $ rails s
 ```
 
-#カタログ設計
-https://docs.google.com/spreadsheets/d/1ME-1gXcocqcyixC3rx1pKhO4gj_QeFLSpys9BUkpzPg/edit?usp=sharing
+#カタログ設計　<br>
+https://docs.google.com/spreadsheets/d/1ME-1gXcocqcyixC3rx1pKhO4gj_QeFLSpys9BUkpzPg/edit?usp=sharing　<br>
 
 
-#テーブル設計
-https://docs.google.com/spreadsheets/d/1ME-1gXcocqcyixC3rx1pKhO4gj_QeFLSpys9BUkpzPg/edit?usp=sharing
+#テーブル設計　<br>
+https://docs.google.com/spreadsheets/d/1ME-1gXcocqcyixC3rx1pKhO4gj_QeFLSpys9BUkpzPg/edit?usp=sharing　<br>
 
 
-#ワイヤーフレーム
-https://drive.google.com/file/d/1MFA8nBl1ddbEk1WGKNoCWk8-K7k0pzX7/view?usp=sharing
+#ワイヤーフレーム　<br>
+https://drive.google.com/file/d/1MFA8nBl1ddbEk1WGKNoCWk8-K7k0pzX7/view?usp=sharing　<br>
 
 
-#ER図
-https://drive.google.com/file/d/1MFA8nBl1ddbEk1WGKNoCWk8-K7k0pzX7/view?usp=sharing
+#ER図　<br>
+https://drive.google.com/file/d/1MFA8nBl1ddbEk1WGKNoCWk8-K7k0pzX7/view?usp=sharing　<br>
 
-#画面遷移図
-https://drive.google.com/file/d/1MFA8nBl1ddbEk1WGKNoCWk8-K7k0pzX7/view?usp=sharing
+#画面遷移図　<br>
+https://drive.google.com/file/d/1MFA8nBl1ddbEk1WGKNoCWk8-K7k0pzX7/view?usp=sharing　<br>
