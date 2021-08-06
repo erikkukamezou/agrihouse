@@ -52,6 +52,9 @@ https://drive.google.com/file/d/1MFA8nBl1ddbEk1WGKNoCWk8-K7k0pzX7/view?usp=shari
 
 # ER図　<br>
 https://drive.google.com/file/d/1MFA8nBl1ddbEk1WGKNoCWk8-K7k0pzX7/view?usp=sharing　<br>
+![ER図](https://user-images.githubusercontent.com/80878956/128460471-5f01dbdc-5867-46b4-9a7e-eb4b9659ef79.png) <br>
+
 
 # 画面遷移図　<br>
 https://drive.google.com/file/d/1MFA8nBl1ddbEk1WGKNoCWk8-K7k0pzX7/view?usp=sharing　<br>
+![画面遷移図](https://user-images.githubusercontent.com/80878956/128460581-390e8e17-3957-41e6-b6ee-f4a293a5ca10.png) <br>
