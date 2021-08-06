@@ -27,12 +27,13 @@ gem 'momentjs-rails' <br>
 ・gem 'ransack' <br>
 観察日記や日々のことを記録していくので、情報が多くなるとほしい時にすぐ表示ができないので検索できるようにするため導入 <br>
 
-```
+
 # 実行手順
+```
 $ git clone git@github.com:erikkukamezou/agripark.git
 $ cd agripark
 $ bundle install
 $ rails db:create db:migrate
 $ rails db:seed
-$ rails s 
+$ rails s
 ```
