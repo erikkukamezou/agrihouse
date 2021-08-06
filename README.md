@@ -28,11 +28,11 @@ gem 'momentjs-rails' <br>
 観察日記や日々のことを記録していくので、情報が多くなるとほしい時にすぐ表示ができないので検索できるようにするため導入 <br>
 
 ```
-# 実行手順 <br>
-$ git clone git@github.com:erikkukamezou/agripark.git <br>
-$ cd agripark <br>
-$ bundle install <br>
-$ rails db:create db:migrate <br>
-$ rails db:seed <br>
-$ rails s <br>
+# 実行手順
+$ git clone git@github.com:erikkukamezou/agripark.git
+$ cd agripark
+$ bundle install
+$ rails db:create db:migrate
+$ rails db:seed
+$ rails s 
 ```
