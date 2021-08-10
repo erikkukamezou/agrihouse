@@ -53,10 +53,10 @@ https://drive.google.com/file/d/1MFA8nBl1ddbEk1WGKNoCWk8-K7k0pzX7/view?usp=shari
 # ER図　<br>
 https://drive.google.com/file/d/1MFA8nBl1ddbEk1WGKNoCWk8-K7k0pzX7/view?usp=sharing　<br>
 
-![ER図5](https://user-images.githubusercontent.com/80878956/128807137-57eff392-79a3-4b3e-8bb1-7231c5ba188c.png) <br>
+![ER図6](https://user-images.githubusercontent.com/80878956/128869527-58869658-8537-441c-922c-7699b7850769.png) <br>
 
 
 # 画面遷移図　<br>
 https://drive.google.com/file/d/1MFA8nBl1ddbEk1WGKNoCWk8-K7k0pzX7/view?usp=sharing　<br>
 
-![画面遷移図2](https://user-images.githubusercontent.com/80878956/128539226-a79208b9-b7b2-4342-b693-310891babe0d.png) <br>
+![画面遷移図3](https://user-images.githubusercontent.com/80878956/128869605-fd86b613-90a1-4af0-a2dc-cf8faceddcb5.png) <br>
