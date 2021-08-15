@@ -1,0 +1,24 @@
+<h1>コスト</h1>
+
+
+<table>
+  <tr>
+    <th>売り上げ</th>
+    <th>肥料</th>
+    <th>土</th>
+    <th>苗・種</th>
+  </tr>
+<% @costs.each do |cost| %>
+  <tr>
+    <td><%= cost.sale %></td>
+    <td><%= cost.fertilizer %></td>
+    <td><%= cost.soil %></td>
+    <td><%= cost.seed %></td>
+    <td><%= link_to '詳細を確認する', cost_path(cost.id) %></td>
+    <td><%= link_to '編集', edit_cost_path(cost.id) %></td>
+    <td><%= link_to '削除', cost_path(cost.id), method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to '新規作成', new_cost_path %>

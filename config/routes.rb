@@ -18,6 +18,11 @@ Rails.application.routes.draw do
           resources :users, only: [:index, :new, :create, :show,  :edit, :destroy]
       end
 
+  resources :dairies
+  resources :costs
+  resources :manufactures
+  resources :events
+
 
 
 

@@ -14,7 +14,7 @@ psql(PostgreSQL) 13.3-1 <br>
 
 # カリキュラム外の技術 <br>
 ・FullCalender <br>
-gem 'jquery-rails', '4.3.3' <br>
+gem 'jquery-rails' <br>
 gem 'fullcalendar-rails' <br>
 gem 'momentjs-rails' <br>
 フルカレンダーの実装 <br>

@@ -1,0 +1,8 @@
+<h1>詳細画面</h1>
+<p>タイトル: <%= @dairy.title %></p>
+<p>内容: <%= @dairy.content %></p>
+<p>
+  <!-- image_nameの項目を以下に変更 -->
+  <strong>Image:</strong>
+  <img src="/dairy_images/<%= @dairy.image %>" width="200px" />
+</p>

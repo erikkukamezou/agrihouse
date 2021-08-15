@@ -1,0 +1,19 @@
+<h1>観察日記</h1>
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>内容</th>
+  </tr>
+<% @dairies.each do |dairy| %>
+  <tr>
+    <td><%= dairy.title %></td>
+    <td><%= dairy.content %></td>
+    <td><%= link_to '詳細を確認する', dairy_path(dairy.id) %></td>
+    <td><%= link_to '編集', edit_dairy_path(dairy.id) %></td>
+    <td><%= link_to '編集', dairy_path(dairy.id), method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to '新規作成', new_dairy_path %>

@@ -1,0 +1,22 @@
+
+
+<%= form_with(model: @cost, local: true) do |form| %>
+  <div class="cost_sale">
+    <%= form.label :売り上げ %>
+    <%= form.text_field :sale %>
+  </div>
+  <div class="cost_fertilizer">
+    <%= form.label :肥料 %>
+    <%= form.text_field :fertilizer %>
+  </div>
+  <div class="cost_soil">
+    <%= form.label :土代 %>
+    <%= form.text_field :soil %>
+  </div>
+  <div class="cost_seed">
+    <%= form.label :苗・種 %>
+    <%= form.text_field :seed %>
+  </div>
+  <%= form.submit %>
+<% end %>
+<%= link_to '一覧画面に戻る', costs_path %>

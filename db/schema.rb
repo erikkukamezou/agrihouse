@@ -10,10 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_13_083720) do
+ActiveRecord::Schema.define(version: 2021_08_15_065501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "costs", force: :cascade do |t|
+    t.integer "sale"
+    t.integer "fertilizer"
+    t.integer "soil"
+    t.integer "seed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_costs_on_user_id"
+  end
+
+  create_table "dairies", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.text "image"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_dairies_on_user_id"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.text "content"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "manufactures", force: :cascade do |t|
+    t.integer "harvest"
+    t.integer "indoor_temperature"
+    t.integer "soil_temperature"
+    t.integer "humidity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_manufactures_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name", default: "", null: false
@@ -34,4 +76,8 @@ ActiveRecord::Schema.define(version: 2021_08_13_083720) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "costs", "users"
+  add_foreign_key "dairies", "users"
+  add_foreign_key "events", "users"
+  add_foreign_key "manufactures", "users"
 end

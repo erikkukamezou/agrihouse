@@ -1,0 +1,22 @@
+<h1>生産管理</h1>
+<table>
+  <tr>
+    <th>収穫量</th>
+    <th>ハウス内の温度</th>
+    <th>土の温度</th>
+    <th>湿度</th>
+  </tr>
+<% @manufactures.each do |manufacture| %>
+  <tr>
+    <td><%= manufacture.harvest %></td>
+    <td><%= munufacture.indoor_temperature %></td>
+    <td><%= manufacture.soil_temperature %></td>
+    <td><%= manufacture.humidity %></td>
+    <td><%= link_to '詳細を確認する', manufacture_path(manufacture.id) %></td>
+    <td><%= link_to '編集', edit_manufacture_path(manufacture.id) %></td>
+    <td><%= link_to '削除', manufacture_path(manufacture.id), method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to '新規作成', new_manufacture_path %>

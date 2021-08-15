@@ -1,0 +1,18 @@
+
+
+<%= form_with(model: @dairy, local: true, multipart: true) do |form| %>
+  <div class="dairy_title">
+    <%= form.label :タイトル %>
+    <%= form.text_field :title %>
+  </div>
+  <div class="dairy_content">
+    <%= form.label :内容 %>
+    <%= form.text_field :content %>
+  </div>
+  <div class="dairy_image">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+  <%= form.submit %>
+<% end %>
+<%= link_to '一覧画面に戻る', dairies_path %>

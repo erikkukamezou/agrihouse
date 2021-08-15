@@ -1,0 +1,20 @@
+<%= form_with(model: @munufacture, local: true) do |form| %>
+  <div class="manufacture_harvest">
+    <%= form.label :収穫量 %>
+    <%= form.text_field :harvest %>
+  </div>
+  <div class="manufacture_indoor_temperature">
+    <%= form.label :ハウス内の温度 %>
+    <%= form.text_field :indoor_temperature %>
+  </div>
+  <div class="manufacture_soil_temperature">
+    <%= form.label :土の温度 %>
+    <%= form.text_field :soil_temperature %>
+  </div>
+  <div class="manufacture_humidity">
+    <%= form.label :湿度 %>
+    <%= form.text_field :humidity %>
+  </div>
+  <%= form.submit %>
+<% end %>
+<%= link_to '一覧画面に戻る', manufactures_path %>
