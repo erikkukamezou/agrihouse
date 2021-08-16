@@ -1,4 +1,5 @@
 class DairiesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_dairy, only: [:show, :edit, :update, :destroy]
   def index
     @dairies = Dairy.all
@@ -9,10 +10,12 @@ class DairiesController < ApplicationController
   end
 
   def create
-    @dairy = Dairy.new(dairy_params)
+    @dairy = current_user.dairies.build(dairy_params)
+    # @dairy = Dairy.new(dairy_params)
+    # @dairy.user_id = current_user_id
     if @dairy.save
       if params[:dairy][:image]
-        File.binwrite("public/post_images/#{@dairy.id}.jpg", params[:dairy][:image].read)
+        File.binwrite("public/dairy_images/#{@dairy.id}.jpg", params[:dairy][:image].read)
         @dairy.update(image: "#{@dairy.id}.jpg" )
       else
         @dairy.update(image: "default.jpg" )
@@ -28,6 +31,9 @@ class DairiesController < ApplicationController
 
   def show
     # @dairy = Dairy.find(params[:id])
+    @comment = Comment.new
+    @comments =@dairy.comments.includes(:user)
+    # @comment = @dairy.comments.order(created_at: :desc)
   end
 
   def edit

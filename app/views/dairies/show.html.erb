@@ -6,3 +6,29 @@
   <strong>Image:</strong>
   <img src="/dairy_images/<%= @dairy.image %>" width="200px" />
 </p>
+
+
+<p>コメント</p>
+<div class="new-comment">
+  <%= form_with(model:[@dairy, @comment], local: true) do |f| %>
+    <!--エラーメッセージ-->
+
+    <%= f.text_area :comment_content, rows:'5',placeholder: "コメントをここに" %>
+    <%= f.submit "送信する" %>
+  <% end %>
+</div>
+
+<p>コメント一覧</p>
+<div class="comments">
+  <% if @dairy.comments.present? %>
+  <p>コメント件数：<%= @comments.count %></p>
+
+  <% @comments.each do |comment| %>
+    <%= comment.user.name %>
+    <%= comment.comment_content %>
+
+  <% end %>
+  <% else %>
+  <p>コメントはまだありません</p>
+  <% end %>
+</div>

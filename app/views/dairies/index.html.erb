@@ -11,7 +11,7 @@
     <td><%= dairy.content %></td>
     <td><%= link_to '詳細を確認する', dairy_path(dairy.id) %></td>
     <td><%= link_to '編集', edit_dairy_path(dairy.id) %></td>
-    <td><%= link_to '編集', dairy_path(dairy.id), method: :delete %></td>
+    <td><%= link_to '削除', dairy_path(dairy.id), method: :delete %></td>
   </tr>
 <% end %>
 </table>

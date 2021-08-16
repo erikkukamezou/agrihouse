@@ -9,4 +9,5 @@ class User < ApplicationRecord
   has_many :costs
   has_many :manufacture
   has_many :events
+  has_many :comments, dependent: :destroy
 end

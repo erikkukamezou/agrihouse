@@ -18,10 +18,13 @@ Rails.application.routes.draw do
           resources :users, only: [:index, :new, :create, :show,  :edit, :destroy]
       end
 
-  resources :dairies
+  resources :dairies do
+    resources :comments, only: [:create]
+  end
   resources :costs
   resources :manufactures
   resources :events
+
 
 
 

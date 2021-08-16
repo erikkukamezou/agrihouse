@@ -1,4 +1,5 @@
 class ManufacturesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_maunufacture, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -10,7 +11,8 @@ class ManufacturesController < ApplicationController
   end
 
   def create
-    @manufacture = Manufacture.new(manufacture_params)
+    @manufacture = current_user.manufactures.build(manufacture_params)
+    # @manufacture = Manufacture.new(manufacture_params)
     if @manufacture.save
       redirect_to manufactures_path, notice: "新規作成したよ"
     else

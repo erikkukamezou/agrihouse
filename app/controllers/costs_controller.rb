@@ -1,4 +1,5 @@
 class CostsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_cost, only: [:show, :edit, :update, :destroy]
 
 
@@ -11,7 +12,8 @@ class CostsController < ApplicationController
   end
 
   def create
-    @cost = Cost.new(cost_params)
+    @cost = current_user.costs.build(cost_params)
+    # @cost = Cost.new(cost_params)
     if @cost.save
       redirect_to costs_path, notice: "新規作成したよ"
     else

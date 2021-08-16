@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_15_065501) do
+ActiveRecord::Schema.define(version: 2021_08_16_043559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text "comment_content"
+    t.bigint "user_id"
+    t.bigint "dairy_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dairy_id"], name: "index_comments_on_dairy_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "costs", force: :cascade do |t|
     t.integer "sale"
@@ -57,6 +67,17 @@ ActiveRecord::Schema.define(version: 2021_08_15_065501) do
     t.index ["user_id"], name: "index_manufactures_on_user_id"
   end
 
+  create_table "tasks", force: :cascade do |t|
+    t.text "work"
+    t.text "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "event_id"
+    t.index ["event_id"], name: "index_tasks_on_event_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.string "email", default: "", null: false
@@ -76,8 +97,12 @@ ActiveRecord::Schema.define(version: 2021_08_15_065501) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "dairies"
+  add_foreign_key "comments", "users"
   add_foreign_key "costs", "users"
   add_foreign_key "dairies", "users"
   add_foreign_key "events", "users"
   add_foreign_key "manufactures", "users"
+  add_foreign_key "tasks", "events"
+  add_foreign_key "tasks", "users"
 end
