@@ -9,7 +9,7 @@
 <% @manufactures.each do |manufacture| %>
   <tr>
     <td><%= manufacture.harvest %></td>
-    <td><%= munufacture.indoor_temperature %></td>
+    <td><%= manufacture.indoor_temperature %></td>
     <td><%= manufacture.soil_temperature %></td>
     <td><%= manufacture.humidity %></td>
     <td><%= link_to '詳細を確認する', manufacture_path(manufacture.id) %></td>

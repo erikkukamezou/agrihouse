@@ -6,11 +6,12 @@ class CommentsController < ApplicationController
       @comment = current_user.comments.new(comment_params)
       @comment.dairy_id = @dairy.id
       if @comment.save
-        redirect_to dairy_path(@dairy), notice: "コメント作成したよ"
-
+        render :dairy_comments, notice: "コメント作成したよ"
+      else
+        # render :dairy_path(@dairy)
+        render 'dairies/show'
       end
-
-    end
+   end
 
   # def destroy
   #     # @comment = Comment.find(params[:id])

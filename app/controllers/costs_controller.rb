@@ -28,9 +28,16 @@ class CostsController < ApplicationController
   end
 
   def update
+    if @cost.update(cost_params)
+      redirect_to costs_path, notice: "更新したよ"
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @cost.destroy
+    redirect_to costs_path, notice: "削除したよ"
   end
 
   private

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_16_043559) do
+ActiveRecord::Schema.define(version: 2021_08_17_052918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2021_08_16_043559) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.text "content"
+    t.string "content"
     t.datetime "start_date"
     t.datetime "end_date"
     t.datetime "created_at", null: false
@@ -72,10 +72,8 @@ ActiveRecord::Schema.define(version: 2021_08_16_043559) do
     t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
     t.bigint "event_id"
     t.index ["event_id"], name: "index_tasks_on_event_id"
-    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -104,5 +102,4 @@ ActiveRecord::Schema.define(version: 2021_08_16_043559) do
   add_foreign_key "events", "users"
   add_foreign_key "manufactures", "users"
   add_foreign_key "tasks", "events"
-  add_foreign_key "tasks", "users"
 end

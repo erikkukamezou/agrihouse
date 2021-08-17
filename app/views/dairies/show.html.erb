@@ -10,7 +10,7 @@
 
 <p>コメント</p>
 <div class="new-comment">
-  <%= form_with(model:[@dairy, @comment], local: true) do |f| %>
+  <%= form_with(model:[@dairy, @comment]) do |f| %>
     <!--エラーメッセージ-->
 
     <%= f.text_area :comment_content, rows:'5',placeholder: "コメントをここに" %>

@@ -64,7 +64,7 @@ $(function () {
                 // Drag & Drop & Resize
                 editable: true,
                 //イベントの時間表示を２４時間に
-                timeFormat: "HH:mm",
+                // timeFormat: "HH:mm",
                 //イベントの色を変える
                 eventColor: '#87cefa',
                 //イベントの文字色を変える

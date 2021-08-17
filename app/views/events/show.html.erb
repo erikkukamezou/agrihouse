@@ -1,0 +1,16 @@
+<h1>作業期間</h1>
+<p>内容: <%= @event.content %></p>
+<p>開始日: <%= @event.start_date %></p>
+<p>終了日: <%= @event.end_date %></p>
+<%= #image_tag @task.image_icon.url, class:"user-icon" %>
+ <% @tasks.each_with_index do |task, i| %>
+<h2>本日のやること<%= i + 1 %></h2>
+<p><%= task.work %></p>
+<p>
+  <!-- image_nameの項目を以下に変更 -->
+  <strong>Image:</strong>
+  <img src="/event_images/<%= task.image %>" width="200px" />
+</p>
+<%= link_to '削除', event_path(@event), method: :delete %>
+<% end %>
+<%= link_to '編集', edit_event_path %>

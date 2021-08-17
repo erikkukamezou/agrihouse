@@ -13,6 +13,7 @@ class ManufacturesController < ApplicationController
   def create
     @manufacture = current_user.manufactures.build(manufacture_params)
     # @manufacture = Manufacture.new(manufacture_params)
+    binding.irb
     if @manufacture.save
       redirect_to manufactures_path, notice: "新規作成したよ"
     else
@@ -27,9 +28,16 @@ class ManufacturesController < ApplicationController
   end
 
   def update
+    if @manufacture.update(manufacture_params)
+      redirect_to manufactures_path, notice: "更新したよ"
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @manufacture.destroy
+    redirect_to  manufacture_path, notice: "削除したよ"
   end
 
   private
