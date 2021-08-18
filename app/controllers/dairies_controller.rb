@@ -2,6 +2,7 @@ class DairiesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_dairy, only: [:show, :edit, :update, :destroy]
   def index
+    # render layout: "sidebar.html.erb"
     @dairies = Dairy.all
   end
 

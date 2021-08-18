@@ -14,3 +14,30 @@
  *= require_self
  *= require fullcalendar
  */
+ .header {
+   background-color: #0bbf41;
+   height: 100px;
+   font-size: 1.5rem;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+  background-color: #0bbf41;
+  height: 100px;
+}
+.pfooter {
+  font-size: 1.5rem;
+  text-align: center;
+  vertical-align: middle;
+}

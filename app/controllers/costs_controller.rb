@@ -4,6 +4,7 @@ class CostsController < ApplicationController
 
 
   def index
+    # render layout: "costs.html.erb"
     @costs = Cost.all
   end
 
