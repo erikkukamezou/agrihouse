@@ -1,4 +1,11 @@
 <h1>生産管理</h1>
+
+<%= column_chart Manufacture.pluck(:harvest, :indoor_temperature, :soil_temperature, :humidity),
+                  id: 'total-attendance-chart',
+                  width: '200px',
+                  height: '200px',
+                  colors: ['#b00'] %>
+
 <table>
   <tr>
     <th>収穫量</th>

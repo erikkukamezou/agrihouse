@@ -1,6 +1,10 @@
 <h1>コスト</h1>
 
-
+<%= column_chart Cost.pluck(:sale, :fertilizer, :soil, :seed),
+                  id: 'total-attendance-chart',
+                  width: '200px',
+                  height: '200px',
+                  colors: ['#b00'] %>
 <table>
   <tr>
     <th>売り上げ</th>

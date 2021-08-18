@@ -54,6 +54,7 @@ class DairiesController < ApplicationController
   end
 
   def destroy
+    @dairy.destroy
     redirect_to dairies_path, notice: "削除しました"
   end
 

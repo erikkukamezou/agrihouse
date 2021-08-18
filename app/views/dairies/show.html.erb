@@ -24,8 +24,12 @@
   <p>コメント件数：<%= @comments.count %></p>
 
   <% @comments.each do |comment| %>
+    <p>投稿者</p>
     <%= comment.user.name %>
+    <p>コメント内容</p>
     <%= comment.comment_content %>
+    <p><%= link_to '削除',dairy_comment_path(@dairy,comment),
+                          method: :delete,data: {confirm:'削除してもよろしいですか？'}%></p>
 
   <% end %>
   <% else %>

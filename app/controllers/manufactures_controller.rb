@@ -1,6 +1,6 @@
 class ManufacturesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_maunufacture, only: [:show, :edit, :update, :destroy]
+  before_action :set_manufacture, only: [:show, :edit, :update, :destroy]
 
   def index
     @manufactures = Manufacture.all
@@ -13,7 +13,6 @@ class ManufacturesController < ApplicationController
   def create
     @manufacture = current_user.manufactures.build(manufacture_params)
     # @manufacture = Manufacture.new(manufacture_params)
-    binding.irb
     if @manufacture.save
       redirect_to manufactures_path, notice: "新規作成したよ"
     else
@@ -37,7 +36,7 @@ class ManufacturesController < ApplicationController
 
   def destroy
     @manufacture.destroy
-    redirect_to  manufacture_path, notice: "削除したよ"
+    redirect_to  manufactures_path, notice: "削除したよ"
   end
 
   private
@@ -45,7 +44,7 @@ class ManufacturesController < ApplicationController
     params.require(:manufacture).permit(:harvest, :indoor_temperature, :soil_temperature, :humidity)
   end
 
-  def set_maunufacture
+  def set_manufacture
     @manufacture = Manufacture.find(params[:id])
   end
 end
