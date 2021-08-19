@@ -1,1 +1,11 @@
+<h1>検索</h1>
+<%= search_form_for @q, url: search_events_path do |f| %>
+  <%= f.label :start_date_cont, '開始日' %>
+  <%= f.search_field :start_date_cont %>
+  <br>
+  <%= f.label :end_date_cont, '終了日' %>
+  <%= f.search_field :end_date_cont %>
+  <%= f.submit '検索' %>
+<% end %>
+
 <div id="calendar"></div>

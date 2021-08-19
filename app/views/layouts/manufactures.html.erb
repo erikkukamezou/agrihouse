@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>生産管理</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+      <header class="header">
+        <% if user_signed_in? %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "新規登録", new_user_registration_path %>
+          <%= link_to "ログイン", new_user_session_path %>
+        <% end %>
+      </header>
+  <%= yield %>
+  <aside class="side_menu">
+      　<div class="card accordion-container">
+    　　　　<div class="card-body accordion-title js-accordion-title">
+      　　　　　イベント
+    　　　　</div>
+    　　　　<div class="card-body accordion-content">
+               <li><%= link_to "イベント一覧", events_path %></li>
+               <li><%= link_to "イベント新規作成", new_event_path %></li>
+    　　　　</div>
+  　　　</div>
+  　　　<div class="card accordion-container">
+    　　　　<div class="card-body accordion-title js-accordion-title">
+      　　　　　コスト
+    　　　　</div>
+    　　　　<div class="card-body accordion-content">
+              <li><%= link_to "コスト一覧", costs_path %></li>
+              <li><%= link_to "コスト新規作成", new_cost_path %></li>  　　　　　
+    　　　　</div>
+  　　　</div>
+  　　　<div class="card accordion-container">
+    　　　　<div class="card-body accordion-title js-accordion-title">
+      　　　　　生産管理
+    　　　　</div>
+    　　　　<div class="card-body accordion-content">
+              <li><%= link_to "生産管理一覧", manufactures_path %></li>
+              <li><%= link_to "生産管理新規作成", new_manufacture_path %></li>　　　　　
+    　　　　</div>
+  　　　</div>
+  　　　<div class="card accordion-container">
+  　　　　　<div class="card-body accordion-title js-accordion-title">
+  　　　　　　　観察日記
+  　　　　　</div>
+  　　　　　<div class="card-body accordion-content">
+              <li><%= link_to "観察日記", dairies_path %></li>
+              <li><%= link_to "観察日記新規作成", new_dairy_path %></li>
+  　　　　　</div>
+  　　　</div>
+      </aside>
+
+      <footer class = "footer">
+        <p class = "pfooter">🄫 2021 アグリパーク.</p>
+      </footer>
+  </body>
+</html>

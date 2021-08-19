@@ -1,10 +1,13 @@
 <h1>生産管理</h1>
 
-<%= column_chart Manufacture.pluck(:harvest, :indoor_temperature, :soil_temperature, :humidity),
-                  id: 'total-attendance-chart',
-                  width: '200px',
-                  height: '200px',
-                  colors: ['#b00'] %>
+<h1>検索</h1>
+<%= search_form_for @q, url: search_manufactures_path do |f| %>
+  <%= f.label :harvest_cont, '検索' %>
+  <%= f.search_field :harvest_cont %>
+  <br>
+  <%= f.submit '検索' %>
+<% end %>
+
 
 <table>
   <tr>
@@ -25,5 +28,3 @@
   </tr>
 <% end %>
 </table>
-
-<%= link_to '新規作成', new_manufacture_path %>

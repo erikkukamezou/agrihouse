@@ -1,10 +1,20 @@
+<!-- <article class="article"> -->
+<main class = "main">
+
+
+
+  <h1>コスト検索</h1>
+<%= search_form_for @q do |f| %>
+  <%= f.label :sale_cont, '売り上げ' %>
+  <%= f.search_field :sale_cont %>
+  <br>
+  <%= f.submit '検索' %>
+<% end %>
+
+
 <h1>コスト</h1>
 
-<%= column_chart Cost.pluck(:sale, :fertilizer, :soil, :seed),
-                  id: 'total-attendance-chart',
-                  width: '200px',
-                  height: '200px',
-                  colors: ['#b00'] %>
+
 <table>
   <tr>
     <th>売り上げ</th>
@@ -24,5 +34,4 @@
   </tr>
 <% end %>
 </table>
-
-<%= link_to '新規作成', new_cost_path %>
+</main>

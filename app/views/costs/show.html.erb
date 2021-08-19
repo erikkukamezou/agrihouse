@@ -3,3 +3,8 @@
 <p>肥料: <%= @cost.fertilizer %></p>
 <p>土: <%= @cost.soil %></p>
 <p>種・苗: <%= @cost.seed %></p>
+<%= column_chart Cost.pluck(:sale, :fertilizer, :soil, :seed),
+                  id: 'total-attendance-chart',
+                  width: '200px',
+                  height: '200px',
+                  colors: ['#b00'] %>

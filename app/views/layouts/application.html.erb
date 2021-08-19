@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Agrihouse</title>
+    <title>アグリパーク</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,24 +11,18 @@
 
   <body data-turbolinks="false">
     <header class="header">
+      <!-- <p class = "logo">アグリパーク</p> -->
     <% if user_signed_in? %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to "新規登録", new_user_registration_path %>
       <%= link_to "ログイン", new_user_session_path %>
+    <% end %>
     </header>
 
-    <% end %>
+
     <%= yield %>
     <aside class="side_menu">
-      <nav>
-        <ul>
-          <li><%= link_to "イベント", events_path %></li>
-          <li><%= link_to "コスト", costs_path %></li>
-          <li><%= link_to "生産管理", manufactures_path %></li>
-          <li><%= link_to "観察日記", dairies_path %></li>
-        </ul>
-      </nav>
     </aside>
     <footer class="footer">
       <p class = "pfooter">🄫 2021 アグリパーク.</p>

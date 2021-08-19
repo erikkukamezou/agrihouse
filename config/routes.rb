@@ -21,9 +21,26 @@ Rails.application.routes.draw do
   resources :dairies do
     resources :comments, only: [:create, :destroy]
   end
-  resources :costs
-  resources :manufactures
-  resources :events
+  resources :dairies do
+    collection do
+      get 'search'
+    end
+  end
+  resources :costs do
+    collection do
+      get 'search'
+    end
+  end
+  resources :manufactures do
+    collection do
+      get 'search'
+    end
+  end
+  resources :events do
+    collection do
+      get 'search'
+    end
+  end
 
 
 
