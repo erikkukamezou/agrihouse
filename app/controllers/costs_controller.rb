@@ -5,7 +5,7 @@ class CostsController < ApplicationController
 
 
   def index
-    @costs = Cost.all
+    # @costs = Cost.all
     @q = Cost.ransack(params[:id])
     @costs = @q.result(distinct: true)
   end

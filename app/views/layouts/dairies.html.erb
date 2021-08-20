@@ -11,13 +11,29 @@
       <header class="header">
         <% if user_signed_in? %>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <p　class = "dairy">アグリパーク</p>
         <% else %>
           <%= link_to "新規登録", new_user_registration_path %>
           <%= link_to "ログイン", new_user_session_path %>
         <% end %>
       </header>
+
+      <div class="row">
+       <div class="col-2">
+         <%= render'layouts/sidebar' %>
+       </div>
+       <div class="col-8">
   <%= yield %>
+      </div>
   <aside class="side_menu">
+        <div class="card accordion-container">
+   　　　　<div class="card-body accordion-title js-accordion-title">
+     　　　　　ユーザー情報
+   　　　　</div>
+   　　　　<div class="card-body accordion-content">
+
+   　　　　</div>
+  　　　</div>
       　<div class="card accordion-container">
     　　　　<div class="card-body accordion-title js-accordion-title">
       　　　　　イベント
