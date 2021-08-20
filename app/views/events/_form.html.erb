@@ -1,5 +1,15 @@
 <%= form_with(model: @event, local: true, multipart: true) do |form| %>
 
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @event.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
 <div class="event_content">
   <%= form.label :内容 %>
@@ -21,7 +31,7 @@
   <p>やること</p>
   <ul>
     <%= form.fields_for :tasks do |form| %>
-    <%= form.hidden_field :user_id, value: current_user.id %>
+    <%# <%= form.hidden_field :user_id, value: current_user.id %> %>
     <li><%= form.label :やること %></li>
     <li><%= form.text_field :work %></li>
     <div class="field">

@@ -1,6 +1,16 @@
-
-
 <%= form_with(model: @dairy, local: true, multipart: true) do |form| %>
+
+  <% if @dairy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @dairy.errors.count %>件のエラーがあります。</h2>
+      <ul>
+      <% @dairy.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="dairy_title">
     <%= form.label :タイトル %>
     <%= form.text_field :title %>

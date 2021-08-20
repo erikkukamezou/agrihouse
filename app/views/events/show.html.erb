@@ -2,7 +2,6 @@
 <p>内容: <%= @event.content %></p>
 <p>開始日: <%= @event.start_date %></p>
 <p>終了日: <%= @event.end_date %></p>
-<%= #image_tag @task.image_icon.url, class:"user-icon" %>
 
 
  <% @tasks.each_with_index do |task, i| %>
@@ -13,7 +12,6 @@
   <strong>Image:</strong>
   <img src="/event_images/<%= task.image %>" width="200px" />
 </p>
-<%= link_to '削除', event_path(@event), method: :delete %>
-<% end %>
-
 <%= link_to '編集', edit_event_path %>
+
+<% end %>
