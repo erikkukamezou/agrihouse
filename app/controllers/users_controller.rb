@@ -3,14 +3,14 @@ class UsersController < ApplicationController
 #
   def index
     # @user = current_user
-    @event = Event.last(1)
-    @dairy = Dairy.last(1)
-    @cost = Cost.last(1)
-    @manufacture = Manufacture.last(1)
+    # @event = Event.last(1)
+    # @dairy = Dairy.last(1)
+    # @cost = Cost.last(1)
+    # @manufacture = Manufacture.last(1)
   end
 
   def show
-    @user = current_user
+    # @user = current_user
   end
 
   def edit

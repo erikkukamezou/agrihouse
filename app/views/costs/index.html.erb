@@ -5,8 +5,8 @@
 
   <h1>コスト検索</h1>
 <%= search_form_for @q do |f| %>
-  <%= f.label :sale_cont, '売り上げ' %>
-  <%= f.search_field :sale_cont %>
+  <%= f.label :sale, '売り上げ' %>
+  <%= f.number_field :sale_cont %>
   <br>
   <%= f.submit '検索' %>
 <% end %>

@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :set_q, only: [:index, :search]
+  # before_action :set_q, only: [:index, :search]
 
 
   def index
@@ -64,15 +64,15 @@ class EventsController < ApplicationController
     redirect_to event_path(@event)
   end
 
-  def search
-    @results = @q.result
-  end
+  # def search
+  #   @results = @q.result
+  # end
 
   private
 
-  def set_q
-    @q = Event.ransack(params[:q])
-  end
+  # def set_q
+  #   @q = Event.ransack(params[:q])
+  # end
 
   def event_params
     params.require(:event).permit(:content, :start_date, :end_date,
