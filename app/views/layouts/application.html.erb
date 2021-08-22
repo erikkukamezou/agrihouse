@@ -4,14 +4,14 @@
     <title>アグリパーク</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body data-turbolinks="false">
     <header class="header">
-      <!-- <p class = "logo">アグリパーク</p> -->
+      <p class = "logo">アグリパーク</p>
     <% if user_signed_in? %>
     <p class = "logout">
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
@@ -20,16 +20,18 @@
     <p class = "acount">
       <%= link_to "アカウント作成", new_user_registration_path %>
     </p>
-    <p class -"login">
+    <p class ="login">
       <%= link_to "ログイン", new_user_session_path %>
     </p>
     <% end %>
+    <p class = "guest">
+      <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
+    </p>
     </header>
 
 
     <%= yield %>
-    <aside class="side_menu">
-    </aside>
+
     <footer class="footer">
       <p class = "pfooter">🄫 2021 アグリパーク.</p>
     </footer>

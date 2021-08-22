@@ -18,16 +18,17 @@
         <% end %>
       </header>
 
-        <div class="row">
-         <div class="col-2">
-           <%= render'layouts/sidebar' %>
-         </div>
-         <div class="col-8">
-  <%= yield %>
-         </div>
-        </div>
-      <aside class="side_menu">
-      </aside>
+          <div class="row">
+           <div class="col-3">
+             <%= render'layouts/sidebar' %>
+           </div>
+           <div class="col-9">
+             <article class = "article">
+    <%= yield %>
+             </article>
+           </div>
+          </div>
+
 
       <footer class = "footer">
         <p class = "pfooter">🄫 2021 アグリパーク.</p>

@@ -53,7 +53,7 @@ class Admin::UsersController < ApplicationController
   private
   def admin_user
     unless current_user.admin?
-      redirect_to user_path, notice: "あなたは管理者ではありません"
+      redirect_to users_path, notice: "あなたは管理者ではありません"
     end
   end
 

@@ -1,7 +1,7 @@
 class ManufacturesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_manufacture, only: [:show, :edit, :update, :destroy]
-  # before_action :set_q, only: [:index, :search]
+  before_action :set_q, only: [:index, :search]
 
   def index
     @manufactures = Manufacture.all
@@ -40,15 +40,15 @@ class ManufacturesController < ApplicationController
     redirect_to  manufactures_path, notice: "削除したよ"
   end
 
-  # def search
-  #   @results = @q.result
-  # end
+  def search
+    @results = @q.result
+  end
 
   private
 
-  # def  set_q
-  #   @q = Manufacture.ransack(params[:q])
-  # end
+  def  set_q
+    @q = Manufacture.ransack(params[:q])
+  end
 
   def manufacture_params
     params.require(:manufacture).permit(:harvest, :indoor_temperature, :soil_temperature, :humidity)
