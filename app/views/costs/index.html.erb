@@ -1,17 +1,6 @@
 <!-- <article class="article"> -->
 
 
-
-
-  <h1>コスト検索</h1>
-<%= search_form_for @q do |f| %>
-  <%= f.label :sale, '売り上げ' %>
-  <%= f.number_field :sale_cont %>
-  <br>
-  <%= f.submit '検索' %>
-<% end %>
-
-
 <h1>コスト</h1>
 
 
@@ -28,7 +17,7 @@
     <td><%= cost.fertilizer %></td>
     <td><%= cost.soil %></td>
     <td><%= cost.seed %></td>
-    <td><%= link_to '詳細を確認する', cost_path(cost.id) %></td>
+    <td><%= link_to '詳細', cost_path(cost.id) %></td>
     <td><%= link_to '編集', edit_cost_path(cost.id) %></td>
     <td><%= link_to '削除', cost_path(cost.id), method: :delete %></td>
   </tr>

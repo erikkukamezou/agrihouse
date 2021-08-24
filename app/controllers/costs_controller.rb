@@ -1,7 +1,7 @@
 class CostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_cost, only: [:show, :edit, :update, :destroy]
-  before_action :set_q, only: [:index, :search]
+  # before_action :set_q, only: [:index, :search]
 
 
   def index
@@ -43,15 +43,15 @@ class CostsController < ApplicationController
     redirect_to costs_path, notice: "削除したよ"
   end
 
-  def search
-    @results = @q.result
-  end
+  # def search
+  #   @results = @q.result
+  # end
 
   private
 
-  def set_q
-    @q = Cost.ransack(params[:q])
-  end
+  # def set_q
+  #   @q = Cost.ransack(params[:q])
+  # end
 
   def cost_params
     params.require(:cost).permit(:sale, :fertilizer, :soil, :seed)

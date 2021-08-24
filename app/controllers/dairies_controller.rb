@@ -1,7 +1,7 @@
 class DairiesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_dairy, only: [:show, :edit, :update, :destroy]
-  before_action :set_q, only: [:index, :search]
+  # before_action :set_q, only: [:index, :search]
   def index
     # render layout: "sidebar.html.erb"
     @dairies = Dairy.all
@@ -16,12 +16,12 @@ class DairiesController < ApplicationController
     # @dairy = Dairy.new(dairy_params)
     # @dairy.user_id = current_user_id
     if @dairy.save
-      if params[:dairy][:image]
-        File.binwrite("public/dairy_images/#{@dairy.id}.jpg", params[:dairy][:image].read)
-        @dairy.update(image: "#{@dairy.id}.jpg" )
-      else
-        @dairy.update(image: "default.jpg" )
-      end
+      # if params[:dairy][:image]
+      #   File.binwrite("public/dairy_images/#{@dairy.id}.jpg", params[:dairy][:image].read)
+      #   @dairy.update(image: "#{@dairy.id}.jpg" )
+      # else
+      #   @dairy.update(image: "default.jpg" )
+      # end
 
 
 
@@ -45,10 +45,10 @@ class DairiesController < ApplicationController
   def update
     # @dairy = Dairy.find(params[:id])
     if @dairy.update(dairy_params)
-      if params[:dairy][:image]
-        File.binwrite("public/dairy_images/#{@dairy.id}.jpg", params[:dairy][:image].read)
-        @dairy.update(image: "#{@dairy.id}.jpg" )
-      end
+      # if params[:dairy][:image]
+      #   File.binwrite("public/dairy_images/#{@dairy.id}.jpg", params[:dairy][:image].read)
+      #   @dairy.update(image: "#{@dairy.id}.jpg" )
+      # end
       redirect_to dairies_path, notice: "編集したよ"
     else
       render :edit
@@ -60,15 +60,15 @@ class DairiesController < ApplicationController
     redirect_to dairies_path, notice: "削除しました"
   end
 
-  def search
-    @results = @q.result
-  end
+  # def search
+  #   @results = @q.result
+  # end
 
   private
-
-  def set_q
-    @q = Dairy.ransack(params[:q])
-  end
+  #
+  # def set_q
+  #   @q = Dairy.ransack(params[:q])
+  # end
 
   def dairy_params
     params.require(:dairy).permit(:title, :content, :image)

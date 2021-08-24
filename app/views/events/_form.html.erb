@@ -11,39 +11,38 @@
     </div>
   <% end %>
 
-<div class="event_content">
-  <%= form.label :内容 %>
-  <%= form.text_field :content %>
-</div>
-
-<div class="event_start">
-  <%= form.label :開始日 %>
-  <%= form.date_select :start_date %>
-</div>
-
-<div class="event_end">
-  <%= form.label :終了日 %>
-  <%= form.date_select :end_date %>
-</div>
-
-<div class="event_task">
-  <% (@event.tasks.count + 1).times do |n| %>
-  <p>やること</p>
-  <ul>
-    <%= form.fields_for :tasks do |form| %>
-    <%# <%= form.hidden_field :user_id, value: current_user.id %> %>
-    <li><%= form.label :やること %></li>
-    <li><%= form.text_field :work %></li>
-    <div class="field">
-    <%= form.label :イメージ %>
-    <%= form.file_field :image %>
+    <div class="event_content">
+      <%= form.label :内容 %>
+      <%= form.text_field :content %>
     </div>
-    <% end %>
-  <% end %>
-  </ul>
-</div>
 
-<div class="actions">
-  <%= form.submit %>
-</div>
+    <div class="event_start">
+      <%= form.label :開始日 %>
+      <%= form.date_select :start_date %>
+    </div>
+
+    <div class="event_end">
+      <%= form.label :終了日 %>
+      <%= form.date_select :end_date %>
+    </div>
+
+    <div class="event_task">
+      <% (@event.tasks.count + 1).times do |n| %>
+      <p>やること</p>
+      <ul>
+        <%= form.fields_for :tasks do |form| %>
+        <li><%= form.label :やること %></li>
+        <li><%= form.text_field :work %></li>
+        <div class="field">
+        <%= form.label :イメージ %>
+        <%= form.file_field :image %>
+        </div>
+        <% end %>
+      <% end %>
+      </ul>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
 <% end %>

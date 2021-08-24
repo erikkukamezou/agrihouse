@@ -1,4 +1,5 @@
 class Task < ApplicationRecord
   belongs_to :event
-  validates :content, presence: true
+  mount_uploader :image, ImageUploader
+
 end

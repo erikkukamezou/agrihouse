@@ -1,12 +1,5 @@
 <h1>生産管理</h1>
 
-<h1>検索</h1>
-<%= search_form_for @q, url: search_manufactures_path do |f| %>
-  <%= f.label :harvest_cont, '検索' %>
-  <%= f.search_field :harvest_cont %>
-  <br>
-  <%= f.submit '検索' %>
-<% end %>
 
 
 <table>
@@ -22,7 +15,7 @@
     <td><%= manufacture.indoor_temperature %></td>
     <td><%= manufacture.soil_temperature %></td>
     <td><%= manufacture.humidity %></td>
-    <td><%= link_to '詳細を確認する', manufacture_path(manufacture.id) %></td>
+    <td><%= link_to '詳細', manufacture_path(manufacture.id) %></td>
     <td><%= link_to '編集', edit_manufacture_path(manufacture.id) %></td>
     <td><%= link_to '削除', manufacture_path(manufacture.id), method: :delete %></td>
   </tr>

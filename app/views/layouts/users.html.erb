@@ -11,6 +11,7 @@
       <header class="header">
         <% if user_signed_in? %>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <p class = "manufacture">アグリパーク</p>
         <% else %>
           <%= link_to "新規登録", new_user_registration_path %>
           <%= link_to "ログイン", new_user_session_path %>
@@ -18,15 +19,15 @@
       </header>
 
         <div class="row">
-          <div class="col-2">
+          <div class="col-3">
             <%= render'layouts/sidebar' %>
           </div>
-          <div class="col-8">
+          <div class="col-9">
+            <article class = "article">
   <%= yield %>
+            </article>
           </div>
         </div>
-      <aside class="side_menu">
-      </aside>
 
       <footer class = "footer">
         <p class = "pfooter">🄫 2021 アグリパーク.</p>

@@ -12,6 +12,10 @@ class User < ApplicationRecord
       end
   end
 
+  validates :name, presence: true
+  validates :email, presence: true
+  validates :password, presence: true
+
   has_many :dairies
   has_many :costs
   has_many :manufactures

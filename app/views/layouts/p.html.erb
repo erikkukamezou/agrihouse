@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>観察日記</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+      <header class="header">
+        <% if user_signed_in? %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <p　class = "dairy">アグリパーク</p>
+        <% else %>
+          <%= link_to "新規登録", new_user_registration_path %>
+          <%= link_to "ログイン", new_user_session_path %>
+        <% end %>
+      </header>
+
+          <div class="row">
+           <div class="col-3">
+             <%= render'layouts/sidebar' %>
+           </div>
+           <div class="col-9">
+             <article class = "article">
+    <%= yield %>
+             </article>
+           </div>
+          </div>
+
+
+      <footer class = "footer">
+        <p class = "pfooter">🄫 2021 アグリパーク.</p>
+      </footer>
+  </body>
+</html>

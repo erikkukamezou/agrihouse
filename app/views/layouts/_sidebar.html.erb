@@ -4,10 +4,10 @@
     <ul class="channel_list">
       <div class="card accordion-container">
   　　　　<div class="card-body accordion-title js-accordion-title">
-   　　　　　ユーザー情報
+   　　　　　ユーザー
   　　　　</div>
   　　　　<div class="card-body accordion-content">
-            <li><%= link_to "マイページ", users_path %></li>
+
             <% if current_user.admin == true %>
             <li><%= link_to "管理者ページ", admin_users_path %></li>
             <% end %>
@@ -42,7 +42,7 @@
 　　　</div>
 　　　<div class="card accordion-container">
 　　　　　<div class="card-body accordion-title js-accordion-title">
-　　　　　　　観察日記
+　　　　　観察日記
 　　　　　</div>
 　　　　　<div class="card-body accordion-content">
             <li><%= link_to "観察日記", dairies_path %></li>

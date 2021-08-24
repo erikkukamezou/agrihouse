@@ -1,14 +1,5 @@
 <h1>観察日記</h1>
 
-<p>検索</p>
-<h1>ユーザー検索</h1>
-<%= search_form_for @q, url: search_dairies_path do |f| %>
-  <%= f.label :title_cont, 'ユーザー名' %>
-  <%= f.search_field :title_cont %>
-  <br>
-  <%= f.submit '検索' %>
-<% end %>
-
 
 <table>
   <tr>
@@ -19,7 +10,7 @@
   <tr>
     <td><%= dairy.title %></td>
     <td><%= dairy.content %></td>
-    <td><%= link_to '詳細を確認する', dairy_path(dairy.id) %></td>
+    <td><%= link_to '詳細', dairy_path(dairy.id) %></td>
 
     <td><%= link_to '編集', edit_dairy_path(dairy.id) %></td>
     <td><%= link_to '削除', dairy_path(dairy.id), method: :delete %></td>
