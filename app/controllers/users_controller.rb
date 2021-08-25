@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update]
 #
   def index
-    # @user = current_user
+    @user = current_user
     # @event = Event.last(1)
     # @dairy = Dairy.last(1)
     # @cost = Cost.last(1)
