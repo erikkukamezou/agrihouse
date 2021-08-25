@@ -1,22 +1,43 @@
-
 <div class="container">
-  <h1 class="title">Bootstrap</h1>
-  <-- 省略 -->
-  <article class="row">
-    <div class="contents col-md-6">
-      <ul class="row">
-        <li class="col-md-offset-1 col-md-6">contents1</li>
-        
-        <li class="col-md-offset-2 col-md-6">contents2</li>
-        <li class="col-md-offset-3 col-md-6">contents3</li>
-        <li class="col-md-offset-4 col-md-6">contents4</li>
-      </ul>
-    </div>
-    <div class="topic col-md-6">
+    <nav class="menu">
       <ul>
-        <li>bootstrapを使ってレスポンシブデザインを実現しよう！</li>
-        <li>やればできる！bootstrapを使ってみよう！</li>
-        <li>怖くない！レスポンシブデザインができるようになればWebアプリケーションもワンランク上に！</li>
+        <div id="agripark">
+          初めての方へ<br>
+          農業初心者でも自分が作った作物を一定の品質や収穫量を保つには何が大事？<br>
+          日々の作業を記録しそこから次は何が必要か考え、実施する<br>
+          数値や文字で視覚化することで<br>
+          根拠に基づいて作業内容を決め、効率良く行うためのアプリです<br>
+          畑栽培、ハウス栽培、家庭菜園、観葉植物など<br>
+          何か育ててみたいなと思う方におススメです<br>
+          <div class = "contents">
+            <div class = "row">
+            <p class = "col-sm-6 col-md-4"><%= button_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %><br></p>
+            <p class = "col-sm-6 col-md-4"><%= button_to "ユーザーログイン", new_user_session_path %><br></p>
+            <p class = "col-sm-6 col-md-4"><%= button_to '管理者ログイン', admin_users_path %><br></p>
+            </div>
+          </div>
+        </div>
+
+      </ul>
+    </nav>
+  <article>
+    <div class="contents">
+      <ul class = "row">
+        <ol class="col-sm-6 col-md-3">生産管理 <br>
+          温度や湿度、収穫量の記録ができます<br>
+        </ol>
+        <ol class="col-sm-6 col-md-3">コスト管理 <br>
+          日々の収支を登録するとグラフ表示で把握できます<br>
+        </ol>
+        <ol class="col-sm-6 col-md-3">スケジュール <br>
+          種植え、虫の駆除、定植など中長期的な期間の登録ができます<br>
+          このスケジュールの中に１日単位でのやることを登録できます<br>
+        </ol>
+        <ol class="col-sm-6 col-md-3">観察日記 <br>
+          日々の作業から疑問の思ったこと、気づいたことなど<br>
+          文と写真で記録に残すことができます<br>
+        </ol>
       </ul>
     </div>
   </article>
+</div>

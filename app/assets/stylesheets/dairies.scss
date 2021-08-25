@@ -22,10 +22,14 @@ h1 {
 // 最初は隠しておく
 .accordion-content {
   display: none;
+  font-size: 19px;
+  text-align: center;
+
 }
 // トグルの位置固定
 .accordion-title{
   position: relative;
+  font-size: 15px;
 }
 // トグルのデザイン
 .accordion-title:after {

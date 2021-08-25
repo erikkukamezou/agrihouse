@@ -41,7 +41,11 @@ class ManufacturesController < ApplicationController
   end
 
   # def search
-  #   @results = @q.result
+  #   # @results = @q.result
+  # 　@zoos = Zoo.all
+  #   @q = Zoo.ransack(params[:q])
+  #   @zoos = @q.result
+  #
   # end
 
   private

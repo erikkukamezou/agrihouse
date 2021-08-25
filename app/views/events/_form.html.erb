@@ -13,7 +13,7 @@
 
     <div class="event_content">
       <%= form.label :内容 %>
-      <%= form.text_field :content %>
+      <%= form.text_field :content, :placeholder => "内容を入力" %>
     </div>
 
     <div class="event_start">
@@ -28,11 +28,10 @@
 
     <div class="event_task">
       <% (@event.tasks.count + 1).times do |n| %>
-      <p>やること</p>
       <ul>
         <%= form.fields_for :tasks do |form| %>
         <li><%= form.label :やること %></li>
-        <li><%= form.text_field :work %></li>
+        <li><%= form.text_field :work, :placeholder => "やることを入力" %></li>
         <div class="field">
         <%= form.label :イメージ %>
         <%= form.file_field :image %>

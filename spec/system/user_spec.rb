@@ -30,7 +30,7 @@ RSpec.describe 'ユーザーの登録', type: :system do
       end
       context 'ユーザーが登録されている場合' do
         it 'ログインができる' do
-          visit new_session_path
+          visit new_user_session_path
           fill_in 'session[email]', with: 'test100@test.com'
           fill_in 'session[password]', with: 'test100test100'
           click_button 'commit'
@@ -38,9 +38,42 @@ RSpec.describe 'ユーザーの登録', type: :system do
           expect(current_path).to eq user_path(id: @user.id)
         end
 
-        context 'ログアウトができる' do
-          visit
+        it 'ログアウトができる' do
+          visit new_user_session_path
+          fill_in 'session[email]', with: 'test100test.com'
+          fill_in 'session[password]', with: 'test100test100'
+          click_button 'ログイン'
+          visit usesr_path(id: @user.id)
+          click_link 'ログアウト'
+          expect(page).to have_content 'sign up'
         end
       end
+    end
+
+    describe '管理者画面のテスト' do
+      before do
+        @user1 = FactoryBot.create(:user)
+        @user2 = FactoryBot.create(:second_user)
+        @user3 = FactoryBot.create(:third_user)
+      end
+      context '管理者が登録されている場合' do
+        it '管理者は管理画面にアクセスできる' do
+          visit new_user_session_path
+          fill_in 'session[email]', with: 'test103@test.com'
+          fill_in 'session[password]', with: 'test103test103'
+          click_button 'ログイン'
+          expect(current_path).to eq admin_user_path
+        end
+      end
+      context '一般ユーザの場合' do
+        it '管理画面にアクセスできない' do
+          visit new_user_session_path
+          fill_in 'session[email]', with: 'test102@test.com'
+          fill_in 'session[password]', with: 'test102test102'
+          click_button 'ログイン'
+          expect(page).to have_content 'あなたは管理者ではありません'
+        end
+      end
+      context
     end
   end
