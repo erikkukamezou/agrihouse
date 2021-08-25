@@ -7,7 +7,7 @@
    　　　　　ユーザー
   　　　　</div>
   　　　　<div class="card-body accordion-content">
-            <li><%= link_to "マイページ", user_path(@user.id) %></li>
+            <li><%= link_to "マイページ", user_path(current_user.id) %></li>
             <li><%= link_to "業務ページ", users_path %></li>
             <% if current_user.admin == true %>
             <li><%= link_to "管理者ページ", admin_users_path %></li>
