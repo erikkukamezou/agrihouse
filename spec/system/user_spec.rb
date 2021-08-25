@@ -74,6 +74,5 @@ RSpec.describe 'ユーザーの登録', type: :system do
           expect(page).to have_content 'あなたは管理者ではありません'
         end
       end
-      context
     end
   end

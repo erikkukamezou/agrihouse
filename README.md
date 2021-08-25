@@ -53,7 +53,7 @@ https://drive.google.com/file/d/1MFA8nBl1ddbEk1WGKNoCWk8-K7k0pzX7/view?usp=shari
 # ER図　<br>
 https://drive.google.com/file/d/1MFA8nBl1ddbEk1WGKNoCWk8-K7k0pzX7/view?usp=sharing　<br>
 
-![ER図11](https://user-images.githubusercontent.com/80878956/129696300-0855cc41-1e31-46ff-ba0c-72225f29ede2.png) <br>
+![ER図12](https://user-images.githubusercontent.com/80878956/130807961-b584a203-4177-4ec6-8113-c6416ede6961.png) <br>
 
 
 # 画面遷移図　<br>
