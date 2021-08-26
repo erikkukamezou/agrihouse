@@ -13,7 +13,7 @@
             <div class = "row">
             <p class = "col-sm-6 col-md-4"><%= button_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %><br></p>
             <p class = "col-sm-6 col-md-4"><%= button_to "ユーザーログイン", new_user_session_path %><br></p>
-            <p class = "col-sm-6 col-md-4"><%= button_to '管理者ログイン', admin_users_path %><br></p>
+            <p class = "col-sm-6 col-md-4"><%= button_to 'ゲスト管理者ログイン', users_admin_guest_sign_in_path, method: :post %><br></p>
             </div>
           </div>
         </div>
