@@ -1,6 +1,7 @@
 class DairiesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_dairy, only: [:show, :edit, :update, :destroy]
+  before_action :login_user, only: [:edit, :destroy, :update]
   # before_action :set_q, only: [:index, :search]
   def index
     # render layout: "sidebar.html.erb"
@@ -65,6 +66,12 @@ class DairiesController < ApplicationController
   # end
 
   private
+
+  def login_user
+    unless Dairy.find(params[:id]).user.id.to_i == current_user.id
+        redirect_to dairies_path(current_user)
+    end
+  end
   #
   # def set_q
   #   @q = Dairy.ransack(params[:q])

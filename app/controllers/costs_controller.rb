@@ -1,6 +1,7 @@
 class CostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_cost, only: [:show, :edit, :update, :destroy]
+  before_action :login_user, only: [:edit, :destroy, :update]
   # before_action :set_q, only: [:index, :search]
 
 
@@ -48,6 +49,12 @@ class CostsController < ApplicationController
   # end
 
   private
+
+  def login_user
+    unless Cost.find(params[:id]).user.id.to_i == current_user.id
+        redirect_to costs_path(current_user)
+    end
+  end
 
   # def set_q
   #   @q = Cost.ransack(params[:q])

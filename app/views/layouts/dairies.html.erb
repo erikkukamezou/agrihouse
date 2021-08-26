@@ -9,6 +9,7 @@
   </head>
   <body>
       <header class="header">
+        <p class = "dairy-logo">観察日記</p>
         <% if user_signed_in? %>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
           <p　class = "dairy">アグリパーク</p>

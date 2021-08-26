@@ -1,6 +1,7 @@
 class ManufacturesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_manufacture, only: [:show, :edit, :update, :destroy]
+  before_action :login_user, only: [:edit, :destroy, :update]
   # before_action :set_q, only: [:index, :search]
 
   def index
@@ -49,6 +50,12 @@ class ManufacturesController < ApplicationController
   # end
 
   private
+
+  def login_user
+    unless Manufacture.find(params[:id]).user.id.to_i == current_user.id
+        redirect_to manufactures_path(current_user)
+    end
+  end
 
   # def  set_q
   #   @q = Manufacture.ransack(params[:q])

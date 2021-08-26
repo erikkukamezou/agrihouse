@@ -10,9 +10,12 @@
 <p>
   <!-- image_nameの項目を以下に変更 -->
   <strong>Image:</strong>
-  
+
   <%= image_tag task.image.url %>
 </p>
-<%= link_to '編集', edit_event_path %>
+<% end %>
 
+<% if user_signed_in? && current_user.id == @event.user_id %>
+<%= link_to '編集', edit_event_path %>
+<%= link_to '削除', event_path(@event.id), method: :delete %>
 <% end %>

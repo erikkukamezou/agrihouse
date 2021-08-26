@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :login_user, only: [:edit, :destroy, :update]
   # before_action :set_q, only: [:index, :search]
 
 
@@ -69,6 +70,12 @@ class EventsController < ApplicationController
   # end
 
   private
+
+  def login_user
+    unless Event.find(params[:id]).user.id.to_i == current_user.id
+        redirect_to events_path(current_user)
+    end
+  end
 
   # def set_q
   #   @q = Event.ransack(params[:q])

@@ -18,8 +18,10 @@
     <td><%= cost.soil %></td>
     <td><%= cost.seed %></td>
     <td><%= link_to '詳細', cost_path(cost.id) %></td>
+    <% if user_signed_in? && current_user.id == cost.user_id %>
     <td><%= link_to '編集', edit_cost_path(cost.id) %></td>
     <td><%= link_to '削除', cost_path(cost.id), method: :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
