@@ -13,7 +13,7 @@ FactoryBot.define do
     soil_temperature {20}
     humidity {20}
     user_id { User.first.id }
-    association :user
+    # association :user
   end
 
   factory :third_manufacture, class: Manufacture do
@@ -22,6 +22,6 @@ FactoryBot.define do
     soil_temperature {30}
     humidity {30}
     user_id { User.first.id }
-    association :user
+    # association :user
   end
 end

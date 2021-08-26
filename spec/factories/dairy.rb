@@ -11,7 +11,7 @@ FactoryBot.define do
     content  {'bbb'}
     image {}
     user_id {User.first.id}
-    association :user
+    # association :user
   end
 
   factory :third_dairy, class: Dairy do
@@ -19,6 +19,6 @@ FactoryBot.define do
     content  {'ccc'}
     image {}
     user_id {User.first.id}
-    association :user
+    # association :user
   end
 end

@@ -93,4 +93,10 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+
+# 「headless_chromeのno-sandboxオプション」を追加する
+ config.before(:each) do |example|
+   driven_by :selenium, using: :headless_chrome, screen_size: [1400, 1400], options: { args: ['no-sandbox'] } if example.metadata[:type] == :system
+ end
+
 end

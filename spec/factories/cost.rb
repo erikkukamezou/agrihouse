@@ -13,7 +13,7 @@ FactoryBot.define do
     soil {300}
     seed {300}
     user_id {User.first.id}
-    association :user
+    # association :user
   end
 
   factory :third_cost, class: Cost do
@@ -22,6 +22,6 @@ FactoryBot.define do
     soil {400}
     seed {400}
     user_id {User.first.id}
-    association :user
+    # association :user
   end
 end
