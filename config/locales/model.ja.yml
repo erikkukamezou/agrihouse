@@ -1,0 +1,38 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      cost: コスト
+      manufacture: 生産管理
+      dairy: 観察日記
+      event: イベント
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: ログインを記憶
+      cost:
+        sale: 売り上げ
+        fertilizer: 肥料
+        soil: 土の値段
+        seed: 種と苗
+      manufacture:
+        harvest: 収穫量
+        indoor_temperature: 室内温度
+        soil_temperature: 土の温度
+        humidity: 湿度
+      dairy:
+        title: タイトル
+        content: 内容
+        image: 写真
+      event:
+        content: 内容
+        start_date: 開始日
+        end_date: 終了日
+      task:
+        work: 業務
+        image: イメージ画像
+      comment:
+        comment_content: 内容

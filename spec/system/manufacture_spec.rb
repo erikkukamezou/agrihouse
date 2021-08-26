@@ -15,7 +15,7 @@ RSpec.describe '生産管理管理機能', type: :system do
     context '生産管理を新規作成した場合' do
       it '作成した生産管理が表示される' do
         visit new_manufacture_path
-        fill_in 'manufacture[sale]', with: '1000'
+        fill_in 'manufacture[harvest]', with: '1000'
         fill_in 'manufacture[indoor_temperature]', with: '1000'
         fill_in 'manufacture[soil_temperature]', with: '1000'
         fill_in 'manufacture[humidity]', with: '1000'

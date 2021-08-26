@@ -12,12 +12,16 @@ RSpec.describe 'イベント管理機能', type: :system do
   end
 
   describe '新規作成機能'  do
-    context 'コストを新規作成した場合' do
-      it '作成したコストが表示される' do
+    context 'イベントを新規作成した場合' do
+      it '作成したイベントが表示される' do
         visit new_event_path
-        fill_in 'event[content]', with: 'test'
-        fill_in 'event[start_date]', with: '2021-08-01'
-        fill_in 'event[end_date]', with: '2021-08-31'
+        fill_in 'event[content]', with: 'testtest'
+        fill_in 'event[start_date(1i)]', with: '2022'
+        fill_in 'event[start_date(2i)]', with: '02'
+        fill_in 'event[start_date(3i)]', with: '02'
+        fill_in 'event[end_date(1i)]', with: '2022'
+        fill_in 'event[end_date(2i)]', with: '02'
+        fill_in 'event[end_date(3i)]', with: '30'
         click_button '登録'
         expect(page).to have_content 'test'
       end
@@ -25,10 +29,10 @@ RSpec.describe 'イベント管理機能', type: :system do
    end
 
    describe '一覧表示' do
-     context 'スケジュール一覧画面に遷移した場合' do
-       it '作成済のスケジュール一覧が表示される' do
+     context 'イベント一覧画面に遷移した場合' do
+       it '作成済のイベント一覧が表示される' do
          visit events_path
-         expect(page).to have_content '200'
+         expect(page).to have_content 'test'
        end
      end
    end
@@ -37,7 +41,7 @@ RSpec.describe 'イベント管理機能', type: :system do
      context '任意のイベント詳細画面に遷移した場合' do
        it '該当のイベントの内容が表示される' do
          visit events_path(:event)
-         expect(page).to have_content '200'
+         expect(page).to have_content 'test'
        end
      end
    end

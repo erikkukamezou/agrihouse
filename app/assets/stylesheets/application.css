@@ -65,9 +65,9 @@
   font-weight: 500;
 }
 .listings {
-  min-height: 138vh;
+  min-height: 125vh;
   height: 100%;
-  width: 220px;
+  width: 230px;
   float: left;
   color: #ab9ba9;
   background-color: #edb553;
@@ -130,7 +130,7 @@
 }
 
 .article {
-  float: left;
+  /* float: left; */
 }
 
 
@@ -146,11 +146,12 @@
 .footer {
   width: 100%;
   height: 100%;
-  position: absolute;
-  /* bottom: 0; */
+  /* position: absolute; */
+  bottom: 0;
   background-color: #0bbf41;
   height: 100px;
   display: table;
+  /* margin-top: auto; */
 }
 .pfooter {
   font-size: 1.5rem;
