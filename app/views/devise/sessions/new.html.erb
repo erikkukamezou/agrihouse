@@ -3,13 +3,19 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
+      <br>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "メールアドレスを入力" %>
   </div>
+    <br>
+      <br>
 
   <div class="field">
     <%= f.label :password %><br />
+      <br>
     <%= f.password_field :password, autocomplete: "current-password", :placeholder => "パスワードを入力" %>
   </div>
+    <br>
+      <br>
 
   <% if devise_mapping.rememberable? %>
     <div class="field">
@@ -18,6 +24,8 @@
     </div>
   <% end %>
 
+  <br>
+    <br>
   <div class="actions">
     <%= f.submit t('.sign_in') %>
   </div>

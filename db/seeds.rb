@@ -32,15 +32,20 @@ Cost.create!(
   seed: "n + 100", )
 
 Dairy.create!( [ {title: "種植え",
-              content: "ゴーヤーの種を植えた。種植えを小規模から行うと効率がいい。"},
+              content: "ゴーヤーの種を植えた。種植えを小規模から行うと効率がいい。",
+              image:File.open('./pubulic/dairy_images/11.jpg')},
               {title: "芽が出た",
-              content: "種植えして3日目くらいで芽が出た！衝撃！"},
+              content: "種植えして3日目くらいで芽が出た！衝撃！",
+              image:File.open('./pubulic/dairy_images/11.jpg')},
               {title: "肥料撒き",
-              content: "今日は肥料を撒いた。新しい機械を導入して時間の短縮になった！"},
+              content: "今日は肥料を撒いた。新しい機械を導入して時間の短縮になった！",
+              image:File.open('./pubulic/dairy_images/11.jpg')},
               {title: "どんどん成長",
-              content: "芽が出でから葉の成長が想像以上に早い"},
+              content: "芽が出でから葉の成長が想像以上に早い",
+              image:File.open('./pubulic/dairy_images/11.jpg')},
               {title: "草を切った",
-              content: "枯れている葉を切った。切りすぎて次の芽が出るか心配。長浜さんは大丈夫って言ってたけど..."}
+              content: "枯れている葉を切った。切りすぎて次の芽が出るか心配。長浜さんは大丈夫って言ってたけど...",
+              image:File.open('./pubulic/dairy_images/11.jpg')}
               ] )
 
 Event.create!( [ { content: "酵素・リン酸・海藻由来・糖類等 追肥",

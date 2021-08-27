@@ -11,7 +11,11 @@
   <!-- image_nameの項目を以下に変更 -->
   <strong>Image:</strong>
 
-  <%= image_tag task.image.url %>
+  <% if task.image? %>
+    <%= image_tag(task.image.url) if task.image && task.image.url %>
+  <% else %>
+    <%= image_tag '/event_images/11.jpg' %>
+  <% end %>
 </p>
 <% end %>
 

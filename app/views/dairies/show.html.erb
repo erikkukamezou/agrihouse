@@ -2,7 +2,12 @@
 <p>タイトル: <%= @dairy.title %></p>
 <p>内容: <%= @dairy.content %></p>
 <p>
-   <%= image_tag @dairy.image.url, size: '320x240' %>
+  <% if @dairy.image? %>
+    <%= image_tag(@dairy.image.url) if @dairy.image && @dairy.image.url %>
+  <% else %>
+    <%= image_tag '/dairy_images/1.jpg' %>
+  <% end %>
+
 </p>
 
 

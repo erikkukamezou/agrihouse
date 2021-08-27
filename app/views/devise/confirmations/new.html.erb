@@ -5,12 +5,17 @@
 
   <div class="field">
     <%= f.label :email %><br />
+    <br>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), :placeholder => "メールアドレスを入力" %>
   </div>
 
   <div class="actions">
     <%= f.submit t('.resend_confirmation_instructions') %>
+      <br>
+        <br>
   </div>
 <% end %>
 
+
+  <br>
 <%= render "devise/shared/links" %>

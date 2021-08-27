@@ -14,7 +14,7 @@
       <p class = "logo">アグリパーク</p>
     <% if user_signed_in? %>
       <p class = "logout">
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
       </p>
     <% else %>
       <p class = "acount">
