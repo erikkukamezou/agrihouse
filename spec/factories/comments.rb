@@ -11,7 +11,7 @@ FactoryBot.define do
   #   user_id {User.first.id}
   #   # association :user
   # end
-  #
+
   # factory :third_comment, class: Comment do
   #   comment_content { 'hey' }
   #   user_id {User.first.id}
