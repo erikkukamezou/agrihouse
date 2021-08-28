@@ -11,21 +11,33 @@
   </div>
 <% end %>
 
+
+<div class="manufacture">
   <div class="manufacture_harvest">
     <%= form.label :収穫量 %>
+    <br>
     <%= form.text_field :harvest, :placeholder => "数値を入力" %>
   </div>
+  <br>
   <div class="manufacture_indoor_temperature">
     <%= form.label :ハウス内の温度 %>
+    <br>
     <%= form.text_field :indoor_temperature, :placeholder => "数値を入力" %>
   </div>
+  <br>
   <div class="manufacture_soil_temperature">
     <%= form.label :土の温度 %>
+    <br>
     <%= form.text_field :soil_temperature, :placeholder => "数値を入力" %>
   </div>
+  <br>
   <div class="manufacture_humidity">
     <%= form.label :湿度 %>
+    <br>
     <%= form.text_field :humidity, :placeholder => "数値を入力" %>
   </div>
+  <br>
   <%= form.submit %>
 <% end %>
+
+</div>

@@ -11,21 +11,23 @@
 
   <body data-turbolinks="false">
     <header class="header">
-      <p class = "logo">アグリパーク</p>
-    <% if user_signed_in? %>
-      <p class = "logout">
-        <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
-      </p>
-    <% else %>
-      <p class = "acount">
-        <%= link_to "アカウント作成", new_user_registration_path %>
-      </p>
-      <p class ="login">
-        <%= link_to "ユーザーログイン", new_user_session_path %>
-        <%= link_to 'ゲスト管理者ログイン', users_admin_guest_sign_in_path, method: :post %>
+      <div class = "logo">アグリパーク</div>
+     <div class="top_menu clearfix">
+        <% if user_signed_in? %>
+          <div class = "logout">
+            <ol><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></ol>
+          </div>
+        <% else %>
+          <div class = "acount">
+            <ol><%= link_to "アカウント作成", new_user_registration_path %></ol>
+          </div>
+          <div class ="login">
+            <ol><%= link_to "ユーザーログイン", new_user_session_path %></ol>
+            <ol><%= link_to 'ゲスト管理者ログイン', users_admin_guest_sign_in_path, method: :post %></ol>
+          </div>
+        <% end %>
+     </div>
 
-      </p>
-    <% end %>
     </header>
 
 

@@ -1,2 +1,38 @@
-<p>ユーザー名</p>
-<%= @user.name %>さん
+<div class="user">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <p>ユーザー名</p>
+  <%= @user.name %>さん
+
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="admin">
+  <p>管理者権限</p>
+  <%= @user.admin %>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="link">
+    <p>ユーザー個人情報へ</p>
+    <%= link_to "作業ページ", user_path(current_user.id) %>
+  </div>
+  <br>
+  <br>
+</div>

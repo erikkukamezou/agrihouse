@@ -10,10 +10,10 @@
   <body>
     <!-- <div class="container"> -->
       <header class="header">
-        <p class = "cost-logo">コスト管理</p>
+        <p class = "cost-logo"></p>
         <% if user_signed_in? %>
           <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
-          <p class ="cost">アグリパーク</p>
+          <p class ="cost_agri"></p>
         <% else %>
           <%= link_to "新規登録", new_user_registration_path %>
           <%= link_to "ログイン", new_user_session_path %>

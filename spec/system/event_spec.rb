@@ -16,14 +16,22 @@ RSpec.describe 'イベント管理機能', type: :system do
       it '作成したイベントが表示される' do
         visit new_event_path
         fill_in 'event[content]', with: 'testtest'
-        fill_in 'event[start_date(1i)]', with: '2022'
-        fill_in 'event[start_date(2i)]', with: '02'
-        fill_in 'event[start_date(3i)]', with: '02'
-        fill_in 'event[end_date(1i)]', with: '2022'
-        fill_in 'event[end_date(2i)]', with: '02'
-        fill_in 'event[end_date(3i)]', with: '30'
+        select '2022', from: 'event[start_date(1i)]'
+        select '12', from: 'event[start_date(2i)]'
+        select '22', from: 'event[start_date(3i)]'
+        select '2022', from: 'event[end_date(1i)]'
+        select '12', from: 'event[end_date(2i)]'
+        select '30', from: 'event[end_date(3i)]'
+
+
+        # fill_in 'event[start_date(2i)]', with: '02'
+        # fill_in 'event[start_date(3i)]', with: '02'
+        # fill_in 'event[end_date(1i)]', with: '2022'
+        # fill_in 'event[end_date(2i)]', with: '02'
+        # fill_in 'event[end_date(3i)]', with: '30'
+        fill_in 'event[tasks_attributes][0][work]', with: '業務'
         click_button '登録'
-        expect(page).to have_content 'test'
+        expect(page).to have_content '12a'
       end
     end
    end
@@ -32,7 +40,7 @@ RSpec.describe 'イベント管理機能', type: :system do
      context 'イベント一覧画面に遷移した場合' do
        it '作成済のイベント一覧が表示される' do
          visit events_path
-         expect(page).to have_content 'test'
+         expect(page).to have_content '12a'
        end
      end
    end
@@ -41,7 +49,8 @@ RSpec.describe 'イベント管理機能', type: :system do
      context '任意のイベント詳細画面に遷移した場合' do
        it '該当のイベントの内容が表示される' do
          visit events_path(:event)
-         expect(page).to have_content 'test'
+         expect(page).to have_content '12a'
+         # expect(page).to  have_content '草取り'
        end
      end
    end

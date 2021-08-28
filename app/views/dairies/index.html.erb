@@ -1,21 +1,24 @@
-<h1>観察日記</h1>
+<div class="dairy">
+  <h1>観察日記</h1>
 
 
-<table>
-  <tr>
-    <th>タイトル</th>
-    <th>内容</th>
-  </tr>
-<% @dairies.each do |dairy| %>
-  <tr>
-    <td><%= dairy.title %></td>
-    <td><%= dairy.content %></td>
-    <td><%= link_to '詳細', dairy_path(dairy.id) %></td>
-    <% if user_signed_in? && current_user.id == dairy.user_id %>
-    <td><%= link_to '編集', edit_dairy_path(dairy.id) %></td>
-    <td><%= link_to '削除', dairy_path(dairy.id), method: :delete %></td>
-    <% end %>
+  <table>
+    <tr>
+      <th>タイトル</th>
+      <th>内容</th>
+    </tr>
+  <% @dairies.each do |dairy| %>
+    <tr>
+      <td><%= dairy.title %></td>
+      <td><%= dairy.content %></td>
+      <td><%= link_to '詳細', dairy_path(dairy.id) %></td>
+      <% if user_signed_in? && current_user.id == dairy.user_id %>
+      <td><%= link_to '編集', edit_dairy_path(dairy.id) %></td>
+      <td><%= link_to '削除', dairy_path(dairy.id), method: :delete %></td>
+      <% end %>
 
-  </tr>
-<% end %>
-</table>
+    </tr>
+  <% end %>
+  </table>
+
+</div>

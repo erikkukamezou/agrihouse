@@ -16,40 +16,40 @@
           <br>
           何か育ててみたいなと思う方におススメです<br>
           <br>
-
-
         </div>
-
       </ul>
+
+      <div class = "rowp" >
+      <p class = "col-sm-6 col-md-3">ゲストさんはこちらから</p>
+        <%= button_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "normal_guest" %><br>
+      <p class = "col-sm-6 col-md-3">ユーザーさんはこちらから
+        <%= button_to "ユーザーログイン", new_user_session_path %><br></p>
+      <p class = "col-sm-6 col-md-3">ゲスト管理さんはこちらから<%= button_to 'ゲスト管理者ログイン', users_admin_guest_sign_in_path, method: :post %><br></p>
+      <p class = "col-sm-6 col-md-3">新規登録されるかたはこちらから </p>
+        <%= button_to '新規登録', new_user_registration_path %>
+      </div>
     </nav>
   <article>
     <div class="contents">
       <ul class = "row">
+
         <!-- <div class = "contents"> -->
-          <div class = "row">
-          <p class = "col-sm-6 col-md-3">ゲストさんはこちらから</p>
-            <%= button_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "normal_guest" %><br>
-          <p class = "col-sm-6 col-md-3">ユーザーさんはこちらから
-            <%= button_to "ユーザーログイン", new_user_session_path %><br></p>
-          <p class = "col-sm-6 col-md-3">ゲスト管理さんはこちらから<%= button_to 'ゲスト管理者ログイン', users_admin_guest_sign_in_path, method: :post %><br></p>
-          <p class = "col-sm-6 col-md-3">新規登録されるかたはこちらから </p>
-            <%= button_to '新規登録', new_user_registration_path %>
-          </div>
+
         <!-- </div> -->
+
 <br>
-        <ol class="col-sm-6 col-md-3">生産管理 <br>
+        <ol class="col-sm-6 col-md-3">・生産管理 <br>
           温度や湿度、収穫量の記録ができます<br>
         </ol>
-        <ol class="col-sm-6 col-md-3">コスト管理 <br>
+        <ol class="col-sm-6 col-md-3">・コスト管理 <br>
           日々の収支を登録するとグラフ表示で把握できます<br>
         </ol>
-        <ol class="col-sm-6 col-md-3">スケジュール <br>
+        <ol class="col-sm-6 col-md-3">・スケジュール <br>
           種植え、虫の駆除、定植など中長期的な期間の登録ができます<br>
           このスケジュールの中に１日単位でのやることを登録できます<br>
         </ol>
-        <ol class="col-sm-6 col-md-3">観察日記 <br>
-          日々の作業から疑問の思ったこと、気づいたことなど<br>
-          文と写真で記録に残すことができます<br>
+        <ol class="col-sm-6 col-md-3">・観察日記 <br>
+          日々の作業から疑問の思ったこと、気づいたことなど文と写真で記録に残すことができます<br>
         </ol>
       </ul>
     </div>

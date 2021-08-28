@@ -9,10 +9,10 @@
   </head>
   <body>
       <header class="header">
-        <p class = "manufacture-logo">生産管理</p>
+        <p class = "manufacture-logo"></p>
         <% if user_signed_in? %>
           <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
-          <p class = "manufacture">アグリパーク</p>
+          <p class = "manufacture_agri"></p>
         <% else %>
           <%= link_to "新規登録", new_user_registration_path %>
           <%= link_to "ログイン", new_user_session_path %>

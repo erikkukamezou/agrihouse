@@ -15,15 +15,36 @@
  *= require_self
  *= require fullcalendar
  */
- .logo {
-   font-size: 1.5rem;
-   text-align: center;
 
+ /* .fc-toolbar.fc-header-toolbar {
+   height: 30px;
+ } */
+
+
+ .logo {
+  font-size: 1.5rem;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;]
+  margin: 0 auto;
+  /* background-color: red; */
+  margin-right: 50px;
+  width: 130px;
+  /* float: left; */
  }
+ .top_menu  {
+  float: right;
+  padding: 15px;
+  /* display: flex */
+  /* background-color: blue; */
+}
  .header {
    background-color: #0bbf41;
    height: 100px;
+   width: 100%;
    font-size: 1.5rem;
+   display: table
+   /* display: flex */
  }
 
  .channel-menu {

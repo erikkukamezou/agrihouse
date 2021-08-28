@@ -1,10 +1,18 @@
-<h1>生産管理の詳細</h1>
-<p>収穫量</p> <%= @manufacture.harvest %>
-<p>ハウス内の温度</p> <%= @manufacture.indoor_temperature %>
-<p>土の温度</p> <%= @manufacture.soil_temperature %>
-<p>湿度</p> <%= @manufacture.humidity %>
-<%= column_chart Manufacture.pluck(:harvest, :indoor_temperature, :soil_temperature, :humidity),
-                  id: 'total-attendance-chart',
-                  width: '200px',
-                  height: '200px',
-                  colors: ['#b00'] %>
+<div class="manufacture">
+  <h1>生産管理の詳細</h1>
+  <br>
+  <p>収穫量</p>
+  <%= @manufacture.harvest %>
+  <p>ハウス内の温度</p>
+  <%= @manufacture.indoor_temperature %>
+  <p>土の温度</p>
+  <%= @manufacture.soil_temperature %>
+  <p>湿度</p>
+  <%= @manufacture.humidity %>
+  <%= column_chart Manufacture.pluck(:harvest, :indoor_temperature, :soil_temperature, :humidity),
+                    id: 'total-attendance-chart',
+                    width: '200px',
+                    height: '200px',
+                    colors: ['#b00'] %>
+
+</div>

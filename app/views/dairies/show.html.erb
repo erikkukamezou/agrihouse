@@ -1,41 +1,45 @@
-<h1>詳細画面</h1>
-<p>タイトル: <%= @dairy.title %></p>
-<p>内容: <%= @dairy.content %></p>
-<p>
-  <% if @dairy.image? %>
-    <%= image_tag(@dairy.image.url) if @dairy.image && @dairy.image.url %>
-  <% else %>
-    <%= image_tag '/dairy_images/1.jpg' %>
-  <% end %>
+<div class="dairy">
+  <h1>詳細画面</h1>
+  <p>タイトル: <%= @dairy.title %></p>
+  <p>内容: <%= @dairy.content %></p>
+  <p>
+    <% if @dairy.image? %>
+      <%= image_tag(@dairy.image.url) if @dairy.image && @dairy.image.url %>
+    <% else %>
+      <%= image_tag '/dairy_images/1.jpg' %>
+    <% end %>
 
-</p>
+  </p>
 
 
-<p>コメント</p>
-<div class="new-comment">
-  <%= form_with(model:[@dairy, @comment]) do |f| %>
-    <!--エラーメッセージ-->
+  <p>コメント</p>
+  <div class="new-comment">
+    <%= form_with(model:[@dairy, @comment]) do |f| %>
+      <!--エラーメッセージ-->
 
-    <%= f.text_area :comment_content, rows:'5', :placeholder => "コメントを入力" %>
-    <%= f.submit "送信する" %>
-  <% end %>
-</div>
+      <%= f.text_area :comment_content, rows:'5', :placeholder => "コメントを入力" %>
+      <%= f.submit "送信する" %>
+    <% end %>
+  </div>
 
-<p>コメント一覧</p>
-<div class="comments">
-  <% if @dairy.comments.present? %>
-  <p>コメント件数：<%= @comments.count %></p>
+  <p>コメント一覧</p>
+  <div class="comments">
+    <% if @dairy.comments.present? %>
+    <p>コメント件数：<%= @comments.count %></p>
 
-  <% @comments.each do |comment| %>
-    <p>投稿者</p>
-    <%= comment.user.name %>
-    <p>コメント内容</p>
-    <%= comment.comment_content %>
-    <p><%= link_to '削除',dairy_comment_path(@dairy,comment),
-                          method: :delete,data: {confirm:'削除してもよろしいですか？'}%></p>
+    <% @comments.each do |comment| %>
+      <p>投稿者</p>
+      <%= comment.user.name %>
+      <p>コメント内容</p>
+      <%= comment.comment_content %>
+      <p><%= link_to '削除',dairy_comment_path(@dairy,comment),
+                            method: :delete,data: {confirm:'削除してもよろしいですか？'}%></p>
 
-  <% end %>
-  <% else %>
-  <p>コメントはまだありません</p>
-  <% end %>
+    <% end %>
+    <% else %>
+    <p>コメントはまだありません</p>
+    <% end %>
+  </div>
+
+
 </div>

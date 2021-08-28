@@ -11,37 +11,46 @@
     </div>
   <% end %>
 
-    <div class="event_content">
-      <%= form.label :内容 %>
-      <%= form.text_field :content, :placeholder => "内容を入力" %>
-    </div>
+<div class = "event">
+  <div class="event_content">
+    <%= form.label :内容 %>
+    <br>
+    <%= form.text_field :content, :placeholder => "内容を入力" %>
+  </div>
+  <br>
 
-    <div class="event_start">
-      <%= form.label :開始日 %>
-      <%= form.date_select :start_date %>
-    </div>
+  <div class="event_start">
+    <%= form.label :開始日 %>
+    <br>
+    <%= form.date_select :start_date %>
+  </div>
+  <br>
 
-    <div class="event_end">
-      <%= form.label :終了日 %>
-      <%= form.date_select :end_date %>
-    </div>
+  <div class="event_end">
+    <%= form.label :終了日 %>
+    <br>
+    <%= form.date_select :end_date %>
+  </div>
+  <br>
 
-    <div class="event_task">
-      <% (@event.tasks.count + 1).times do |n| %>
-      <ul>
-        <%= form.fields_for :tasks do |form| %>
-        <li><%= form.label :やること %></li>
-        <li><%= form.text_field :work, :placeholder => "やることを入力" %></li>
-        <div class="field">
-        <%= form.label :イメージ %>
-        <%= form.file_field :image %>
-        </div>
-        <% end %>
+  <div class="event_task">
+    <% (@event.tasks.count + 1).times do |n| %>
+    <ul>
+      <%= form.fields_for :tasks do |form| %>
+      <p><%= form.label :やること %></p>
+      <p><%= form.text_field :work, :placeholder => "やることを入力" %></p>
+      <div class="field">
+      <%= form.label :イメージ %>
+      <%= form.file_field :image %>
+      </div>
       <% end %>
-      </ul>
-    </div>
+    <% end %>
+    </ul>
+  </div>
+  <br>
 
-    <div class="actions">
-      <%= form.submit %>
-    </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+</div>
 <% end %>

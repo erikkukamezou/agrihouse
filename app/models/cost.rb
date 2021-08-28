@@ -4,4 +4,6 @@ class Cost < ApplicationRecord
   validates :sale, presence: true
   validates :soil, presence: true
   validates :seed, presence: true
+
+  
 end
