@@ -5,7 +5,7 @@
     <h2><%= @manufacture.errors.count %>件のエラーがあります。</h2>
     <ul>
     <% @manufacture.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+      <ol><%= msg %></ol>
     <% end %>
     </ul>
   </div>

@@ -1,3 +1,4 @@
+<div class = "event">
 <%= form_with(model: @event, local: true, multipart: true) do |form| %>
 
   <% if @event.errors.any? %>
@@ -5,13 +6,13 @@
       <h2><%= @event.errors.count %>件のエラーがあります。</h2>
       <ul>
       <% @event.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <ol><%= msg %></ol>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-<div class = "event">
+
   <div class="event_content">
     <%= form.label :内容 %>
     <br>

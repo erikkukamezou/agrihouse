@@ -1,27 +1,30 @@
-<h2><%= t('.resend_unlock_instructions') %></h2>
-  <br>
+<div class="">
+  <h2><%= t('.resend_unlock_instructions') %></h2>
     <br>
-      <br>
-
-<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
       <br>
         <br>
-          <br>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "メールアドレスを入力" %>
-  </div>
 
-  <br>
+  <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.label :email %><br />
+        <br>
+          <br>
+            <br>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "メールアドレスを入力" %>
+    </div>
 
     <br>
-      <br>
-  <div class="actions">
-    <%= f.submit t('.resend_unlock_instructions') %>
-  </div>
-<% end %>
 
-  <br>
-<%= render "devise/shared/links" %>
+      <br>
+        <br>
+    <div class="actions">
+      <%= f.submit t('.resend_unlock_instructions') %>
+    </div>
+  <% end %>
+
+    <br>
+  <%= render "devise/shared/links" %>
+
+</div>

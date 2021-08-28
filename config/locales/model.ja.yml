@@ -31,8 +31,8 @@ ja:
         content: 内容
         start_date: 開始日
         end_date: 終了日
-      task:
-        work: 業務
+      event/tasks:
+        work: やること
         image: イメージ画像
       comment:
         comment_content: 内容

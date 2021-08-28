@@ -5,7 +5,7 @@
       <h2><%= @dairy.errors.count %>件のエラーがあります。</h2>
       <ul>
       <% @dairy.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <ol><%= msg %></ol>
       <% end %>
       </ul>
     </div>
