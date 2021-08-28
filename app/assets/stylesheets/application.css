@@ -16,20 +16,18 @@
  *= require fullcalendar
  */
 
- /* .fc-toolbar.fc-header-toolbar {
-   height: 30px;
- } */
 
 
  .logo {
   font-size: 1.5rem;
   text-align: center;
   vertical-align: middle;
-  display: table-cell;]
+  display: table-cell;
   margin: 0 auto;
   /* background-color: red; */
-  margin-right: 50px;
+  /* margin-right: 50px; */
   width: 130px;
+  margin-left: 150px;
   /* float: left; */
  }
  .top_menu  {
