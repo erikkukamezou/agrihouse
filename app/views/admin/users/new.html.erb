@@ -1,5 +1,68 @@
 
 <br>
 <p class = "admin_render">ユーザー登録</p>
-<br>
-<%= render 'form' %>
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this <%= @user.name %> from being saved:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+
+  <div class="field">
+    <%= f.label :名前 %><br />
+      <br>
+    <%= f.text_field :name, autofocus: true, :placeholder => "名前を入力" %>
+  </div>
+
+  <br>
+  <br>
+  <div class="field">
+    <%= f.label :email %><br />
+      <br>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "メールアドレスを入力" %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :password %>
+      <br>
+    <% if @minimum_password_length %>
+      <br>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+      <br>
+    <%= f.password_field :password, autocomplete: "new-password", :placeholder => "パスワードを入力" %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+      <br>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "パスワードを入力" %>
+  </div>
+  <div class="admin_admin">
+    <%= f.label :admin %>  <br>
+    <%= f.check_box :admin %>
+  </div>
+  <br>
+
+    <%= f.submit "新規作成するよ" %>
+  <br>
+ <% end %>
+
+ <div class="">
+   <br>
+   <div class="">
+     作成しないなら
+     <br>
+     <br>
+     <%= link_to "管理者一覧へ", admin_users_path %>
+   </div>
+   <br>
+   <br>
+ </div>
+</div>

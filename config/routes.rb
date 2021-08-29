@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'tops#index'
   # get 'users/show'
 
@@ -27,9 +28,6 @@ Rails.application.routes.draw do
   # get 'users/show', to: 'users#show'
 
   resources :users, only: [:show, :index]
-      namespace :admin do
-          resources :users, only: [:index, :new, :create, :show,  :edit, :destroy]
-      end
 
   resources :dairies do
     resources :comments, only: [:create, :destroy]
