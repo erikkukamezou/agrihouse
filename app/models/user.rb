@@ -4,6 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
+  def confirm!
+    super
+    if confirmed?
+      UserMailer.welcome_email(self).deliver
+    end
+  end
+
   def self.guest
       find_or_create_by!(email: 'guest@example.com') do |user|
       user.name = "ゲスト"
