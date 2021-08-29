@@ -19,9 +19,13 @@ RSpec.describe 'イベント管理機能', type: :system do
         select '2022', from: 'event[start_date(1i)]'
         select '12', from: 'event[start_date(2i)]'
         select '22', from: 'event[start_date(3i)]'
+        select '22', from: 'event[start_date(4i)]'
+        select '50', from: 'event[start_date(5i)]'
         select '2022', from: 'event[end_date(1i)]'
         select '12', from: 'event[end_date(2i)]'
         select '30', from: 'event[end_date(3i)]'
+        select '20', from: 'event[end_date(4i)]'
+        select '30', from: 'event[end_date(5i)]'
 
 
         # fill_in 'event[start_date(2i)]', with: '02'
