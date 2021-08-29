@@ -92,4 +92,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  ActionMailer::Base.delivery_method = :letter_opener_web
+  config.action_mailer.default_url_options = { host: 'arcane-mesa-04338.herokuapp.com'}
 end
