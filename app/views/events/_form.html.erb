@@ -42,7 +42,11 @@
       <p><%= form.text_field :work, :placeholder => "やることを入力" %></p>
       <div class="field">
       <%= form.label :イメージ %>
-      <%= form.file_field :image %>
+      <br>
+      <div class="image_field">
+        <%= form.file_field :image %>
+      </div>
+
       </div>
       <% end %>
     </ul>
