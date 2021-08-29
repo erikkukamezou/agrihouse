@@ -9,11 +9,11 @@
   <%= @manufacture.soil_temperature %>
   <p>湿度（℃）</p>
   <%= @manufacture.humidity %>
-  <div class="">
+  <div class="graph">
     <%= column_chart Manufacture.pluck(:harvest, :indoor_temperature, :soil_temperature, :humidity),
                       id: 'total-attendance-chart',
-                      width: '200px',
-                      height: '200px',
+                      width: '300px',
+                      height: '300px',
                       colors: ['#b00'] %>
   </div>
 
