@@ -151,3 +151,32 @@ ja:
         default_col_sep: ","
         col_sep: "区切り文字"
         col_sep_help: "空白の場合は'%{value}'区切りです" # value is default_col_sep
+    user:
+      name: 名前
+      email: メールアドレス
+      password: パスワード
+      password_confirmation: 確認用パスワード
+      remember_me: ログインを記憶
+    cost:
+      sale: 売り上げ
+      fertilizer: 肥料
+      soil: 土の値段
+      seed: 種と苗
+    manufacture:
+      harvest: 収穫量
+      indoor_temperature: 室内温度
+      soil_temperature: 土の温度
+      humidity: 湿度
+    dairy:
+      title: タイトル
+      content: 内容
+      image: 写真
+    event:
+      content: 内容
+      start_date: 開始日
+      end_date: 終了日
+    event/tasks:
+      work: やること
+      image: イメージ画像
+    comment:
+      comment_content: 内容

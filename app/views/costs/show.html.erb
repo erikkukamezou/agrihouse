@@ -1,9 +1,9 @@
 <div class="cost">
   <h1>詳細画面</h1>
-  <p>売り上げ: <%= @cost.sale %></p>
-  <p>肥料: <%= @cost.fertilizer %></p>
-  <p>土: <%= @cost.soil %></p>
-  <p>種・苗: <%= @cost.seed %></p>
+  <p>売り上げ: <%= @cost.sale %>円</p>
+  <p>肥料: <%= @cost.fertilizer %>円</p>
+  <p>土: <%= @cost.soil %>円</p>
+  <p>種・苗: <%= @cost.seed %>円</p>
   <%= column_chart Cost.pluck(:sale, :fertilizer, :soil, :seed),
                     id: 'total-attendance-chart',
                     width: '200px',
