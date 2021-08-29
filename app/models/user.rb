@@ -4,11 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
-  def confirm!
-    super
-    if confirmed?
-      UserMailer.welcome_email(self).deliver
-    end
+
+  def self.guest
+      find_or_create_by!(email: 'guest@example.com') do |user|
+      user.name = "ゲスト"
+      user.password = SecureRandom.urlsafe_base64
+      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+      end
   end
 
   def self.admin_guest
