@@ -21,8 +21,8 @@
 
       <div class = "rowp" >
         <% if user_signed_in? %>
-          <p>ログアウトはこちらこら</p>
-            <%= button_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <p>マイページにもどる</p>
+            <%= button_to "マイページ", user_path(current_user.id), method: :get %>
         <% else %>
           <p class = "col-sm-6 col-md-3">ゲストさんはこちらから</p>
             <%= button_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "normal_guest" %><br>

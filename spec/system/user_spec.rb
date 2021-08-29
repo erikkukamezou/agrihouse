@@ -65,9 +65,9 @@ RSpec.describe 'ユーザーの登録', type: :system do
           fill_in 'user[email]', with: 'test103@test.com'
           fill_in 'user[password]', with: 'test103test103'
           click_button 'ログイン'
-          visit admin_users_path
+          visit rails_admin_path
           # click_link '管理者ページ'
-          expect(current_path).to eq admin_users_path
+          expect(current_path).to eq rails_admin_path
           # expect(page).to have_content 'ユーザー一覧'
         end
       end
@@ -77,8 +77,8 @@ RSpec.describe 'ユーザーの登録', type: :system do
           fill_in 'user[email]', with: 'test102@test.com'
           fill_in 'user[password]', with: 'test102test102'
           click_button 'ログイン'
-          visit admin_users_path
-          expect(current_path).not_to eq admin_users_path
+          visit rails_admin_path
+          expect(current_path).not_to eq rails_admin_path
           # expect(page).to have_content 'マイページ'
         end
       end
