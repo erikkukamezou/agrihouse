@@ -73,13 +73,17 @@ RSpec.describe 'ユーザーの登録', type: :system do
       end
       context '一般ユーザの場合' do
         it '管理画面にアクセスできない' do
+          # user = users('fan_bingbing')
+
           visit new_user_session_path
           fill_in 'user[email]', with: 'test102@test.com'
           fill_in 'user[password]', with: 'test102test102'
           click_button 'ログイン'
-          visit rails_admin_path
-          expect(current_path).not_to eq rails_admin_path
-          # expect(page).to have_content 'マイページ'
+          ability = Ability.new(@user2)
+          assert ability.cannot?(:name, User.new)
+          # visit rails_admin_path
+          # expect(current_path).not_to eq rails_admin_path
+          # expect(page).not_to have_content 'サイト管理'
         end
       end
 
@@ -95,4 +99,6 @@ RSpec.describe 'ユーザーの登録', type: :system do
       end
 
     end
+
+
   end
