@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :event do
     content {'test'}
-    start_date {'DateTime.now'}
-    end_date {'DateTime.now + 10'}
+    start_date {DateTime.now}
+    end_date {DateTime.now + 10}
     association :user
   end
 

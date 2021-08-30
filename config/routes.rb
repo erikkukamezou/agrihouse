@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
   # get 'users/show', to: 'users#show'
 
-  resources :users, only: [:show, :index]
+  resources :users, only: [:show, :index, :edit]
 
   resources :dairies do
     resources :comments, only: [:create, :destroy]

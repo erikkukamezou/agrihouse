@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+         attr_accessor :current_password
+
+
   def self.guest
       find_or_create_by!(email: 'guest@example.com') do |user|
       user.name = "ゲスト"
@@ -23,9 +26,9 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true
 
-  has_many :dairies
-  has_many :costs
-  has_many :manufactures
+  has_many :dairies, dependent: :destroy
+  has_many :costs, dependent: :destroy
+  has_many :manufactures, dependent: :destroy
   has_many :events, dependent: :destroy
   has_many :comments, dependent: :destroy
 end

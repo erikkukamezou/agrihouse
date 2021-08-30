@@ -29,6 +29,14 @@
      </div>
 
     </header>
+    <div class="notice">
+      <% if notice %>
+        <%= notice %>
+      <% end %>
+      <% if alert %>
+        <%= alert %>
+      <% end %>
+    </div>
 
 
     <%= yield %>

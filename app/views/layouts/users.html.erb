@@ -17,16 +17,29 @@
         <% end %>
       </header>
 
-        <div class="row">
-          <div class="col-3">
+      <div class="notice">
+        <% if notice %>
+          <%= notice %>
+        <% end %>
+        <% if alert %>
+          <%= alert %>
+        <% end %>
+      </div>
+
+　　　<div class="wrapper">
+         <div class="side-menu">
+        <!-- <div class="row"> -->
+          <!-- <div class="col-3"> -->
             <%= render'layouts/sidebar' %>
-          </div>
-          <div class="col-9">
+         </div>
+          <!-- </div> -->
+          <!-- <div class="col-9"> -->
             <article class = "article">
   <%= yield %>
             </article>
-          </div>
-        </div>
+          <!-- </div> -->
+        <!-- </div> -->
+      </div>
 
       <footer class = "footer">
         <p class = "pfooter">🄫 2021 アグリパーク.</p>

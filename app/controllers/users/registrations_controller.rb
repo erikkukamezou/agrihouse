@@ -3,14 +3,14 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-  # before_action :ensure_normal_user, only: [:update, :destroy]
+  before_action :ensure_normal_user, only: [:update, :destroy]
   #
 
-  # def ensure_normal_user
-  #   if resource.email == 'guest@example.com'
-  #     redirect_to users_path, alert: 'ゲストユーザーは変更、削除できません。'
-  #   end
-  # end
+  def ensure_normal_user
+    if resource.email == 'guest@example.com'
+      redirect_to user_path(resource.id), alert: 'ゲストユーザーの更新・削除はできません。'
+    end
+  end
 
   # # GET /resource/sign_up
   # def new

@@ -35,7 +35,7 @@ RSpec.describe 'イベント管理機能', type: :system do
         # fill_in 'event[end_date(3i)]', with: '30'
         fill_in 'event[tasks_attributes][0][work]', with: '業務'
         click_button '登録'
-        expect(page).to have_content '12a'
+        expect(page).to have_content '00:00'
       end
     end
    end
@@ -44,7 +44,7 @@ RSpec.describe 'イベント管理機能', type: :system do
      context 'イベント一覧画面に遷移した場合' do
        it '作成済のイベント一覧が表示される' do
          visit events_path
-         expect(page).to have_content '12a'
+         expect(page).to have_content '00:00'
        end
      end
    end
@@ -53,7 +53,7 @@ RSpec.describe 'イベント管理機能', type: :system do
      context '任意のイベント詳細画面に遷移した場合' do
        it '該当のイベントの内容が表示される' do
          visit events_path(:event)
-         expect(page).to have_content '12a'
+         expect(page).to have_content '00:00'
          # expect(page).to  have_content '草取り'
        end
      end

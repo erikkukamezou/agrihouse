@@ -48,6 +48,21 @@
    /* display: flex */
  }
 
+ .wrapper {
+    width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .side-menu {
+    background-color: #fa8072;
+    width: 200px;
+    float: left;
+    padding-bottom: 10000px;
+    margin-bottom: -10000px;
+  }
+
+
  .channel-menu {
   position: fixed;
   top: 0;
