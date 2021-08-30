@@ -10,7 +10,8 @@
   <p>湿度（℃）</p>
   <%= @manufacture.humidity %>
   <div class="graph">
-    <%= line_chart @manufacture, xtitle: "種類", ytitle: "温度、キロ",width: "600px" %>
+    <%= column_chart @manufacture_chart, xtitle: "種類", ytitle: "温度・キロ",width: "600px" %>
+
   </div>
 
 

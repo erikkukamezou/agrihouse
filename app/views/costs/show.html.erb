@@ -4,10 +4,6 @@
   <p>肥料: <%= @cost.fertilizer %>円</p>
   <p>土: <%= @cost.soil %>円</p>
   <p>種・苗: <%= @cost.seed %>円</p>
-<%= column_chart @cost, xtitle: "種類", ytitle: "円" %>
 
-
-
-
-
+  <%= column_chart @cost_chart, xtitle: "種類", ytitle: "円" %>
 </div>

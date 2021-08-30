@@ -6,9 +6,9 @@ class CostsController < ApplicationController
 
 
   def index
-    # @costs = Cost.all
-    @q = Cost.ransack(params[:q])
-    @costs = @q.result(distinct: true)
+    @costs = Cost.all
+    # @q = Cost.ransack(params[:q])
+    # @costs = @q.result(distinct: true)
   end
 
   def new
@@ -26,6 +26,7 @@ class CostsController < ApplicationController
   end
 
   def show
+    @cost_chart = [["売り上げ",@cost.sale],["肥料",@cost.fertilizer],["土",@cost.soil],["種・苗",@cost.seed]]
   end
 
   def edit

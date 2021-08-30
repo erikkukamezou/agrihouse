@@ -23,6 +23,8 @@ class ManufacturesController < ApplicationController
   end
 
   def show
+    @manufacture_chart = [["収穫量",@manufacture.harvest],["ハウス内の温度",@manufacture.indoor_temperature],["土の温度",@manufacture.soil_temperature],["湿度",@manufacture.humidity]]
+
   end
 
   def edit
