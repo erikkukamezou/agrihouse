@@ -4,9 +4,9 @@
   <p>内容: <%= @dairy.content %></p>
   <div class = image_dairy>
     <% if @dairy.image? %>
-      <%= image_tag(@dairy.image.url, :size =>'320x480') if @dairy.image && @dairy.image.url %>
+      <%= image_tag(@dairy.image.url, :size =>'300x300') if @dairy.image && @dairy.image.url %>
     <% else %>
-      <%= image_tag '/dairy_images/1628159855895.jpg', :size =>'320x400' %>
+      <%= image_tag '/dairy_images/1628159855895.jpg', :size =>'300x300' %>
     <% end %>
 
   </div>

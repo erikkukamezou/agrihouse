@@ -19,9 +19,9 @@
         <br>
 
         <% if task.image? %>
-          <%= image_tag(task.image.url, :size =>'4000x320') if task.image && task.image.url %>
+          <%= image_tag(task.image.url, :size =>'300x300') if task.image && task.image.url %>
         <% else %>
-          <%= image_tag '/event_images/1626917741193.jpg', :size =>'320x400' %>
+          <%= image_tag '/event_images/1626917741193.jpg', :size =>'300x300' %>
         <% end %>
 
       </div>
