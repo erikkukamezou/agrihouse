@@ -2,7 +2,7 @@
 
 <% if @manufacture.errors.any? %>
   <div id="error_explanation">
-    <h2><%= @manufacture.errors.count %>件のエラーがあります。</h2>
+    <h4><%= @manufacture.errors.count %>件のエラーがあります。</h4>
     <ul>
     <% @manufacture.errors.full_messages.each do |msg| %>
       <ol><%= msg %></ol>
@@ -14,27 +14,19 @@
 
   <div class="manufacture_harvest">
     <%= form.label :収穫量 %>
-    <br>
     <%= form.number_field :harvest, :placeholder => "数値を入力" %>
   </div>
-  <br>
   <div class="manufacture_indoor_temperature">
     <%= form.label :ハウス内の温度 %>
-    <br>
     <%= form.number_field :indoor_temperature, :placeholder => "数値を入力" %>
   </div>
-  <br>
   <div class="manufacture_soil_temperature">
     <%= form.label :土の温度 %>
-    <br>
     <%= form.number_field :soil_temperature, :placeholder => "数値を入力" %>
   </div>
-  <br>
   <div class="manufacture_humidity">
     <%= form.label :湿度 %>
-    <br>
     <%= form.number_field :humidity, :placeholder => "数値を入力" %>
   </div>
-  <br>
   <%= form.submit %>
 <% end %>

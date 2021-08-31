@@ -1,48 +1,39 @@
 <div class = "event">
 <%= form_with(model: @event, local: true, multipart: true) do |form| %>
 
-  <% if @event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @event.errors.count %>件のエラーがあります。</h2>
-      <ul>
-      <% @event.errors.full_messages.each do |msg| %>
-        <ol><%= msg %></ol>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+<% if @event.errors.any? %>
+  <div id="error_explanation">
+    <h4><%= @event.errors.count %>件のエラーがあります。</h4>
+    <ul>
+    <% @event.errors.full_messages.each do |msg| %>
+      <ol><%= msg %></ol>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 
   <div class="event_content">
     <%= form.label :内容 %>
-    <br>
     <%= form.text_field :content, :placeholder => "内容を入力" %>
   </div>
-  <br>
 
   <div class="event_start">
     <%= form.label :開始日 %>
-    <br>
     <%= form.datetime_select :start_date %>
   </div>
-  <br>
 
   <div class="event_end">
     <%= form.label :終了日 %>
-    <br>
     <%= form.datetime_select :end_date %>
   </div>
-  <br>
 
   <div class="event_task">
     <ul>
       <%= form.fields_for :tasks do |form| %>
       <p><%= form.label :やること %></p>
-      <%= form.index + 1 %>
       <p><%= form.text_field :work, :placeholder => "やることを入力" %></p>
       <div class="field">
       <%= form.label :イメージ %>
-      <br>
       <div class="image_field">
         <%= form.file_field :image %>
       </div>
@@ -51,10 +42,12 @@
       <% end %>
     </ul>
   </div>
-  <br>
 
   <div class="actions">
     <%= form.submit %>
+
   </div>
+
+
 </div>
 <% end %>

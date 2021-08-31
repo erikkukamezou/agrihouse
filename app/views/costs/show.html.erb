@@ -5,5 +5,11 @@
   <p>土: <%= @cost.soil %>円</p>
   <p>種・苗: <%= @cost.seed %>円</p>
 
-  <%= column_chart @cost_chart, xtitle: "種類", ytitle: "円" %>
+<div class="chart">
+  <div class="cost-chart">
+    <%= column_chart @cost_chart, xtitle: "種類", ytitle: "円", width: "600px" %>
+  </div>
+
+</div>
+
 </div>

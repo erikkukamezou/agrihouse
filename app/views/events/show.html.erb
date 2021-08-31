@@ -1,34 +1,43 @@
 <div class = "event">
-  <h1>スケジュールの詳細</h1>
-  <p>内容: <%= @event.content %></p>
-  <br>
-  <%= "開始日: #{@event.start_date.year}年#{@event.start_date.month}月#{@event.start_date.day}日#{@event.start_date.hour}時" %>
-  <br>
-  <br>
-  <%= "終了日: #{@event.end_date.year}年#{@event.end_date.month}月#{@event.end_date.day}日#{@event.end_date.hour}時" %>
+  <table>
+    <h1>スケジュールの詳細</h1>
+    <p>内容: <%= @event.content %></p>
+    <br>
+      <%= "開始日: #{@event.start_date.year}年#{@event.start_date.month}月#{@event.start_date.day}日#{@event.start_date.hour}時" %>
+    <br>
+    <br>
+      <%= "終了日: #{@event.end_date.year}年#{@event.end_date.month}月#{@event.end_date.day}日#{@event.end_date.hour}時" %>
 
 
-   <% @tasks.each_with_index do |task, i| %>
-  <h2>本日のやること<%= i + 1 %></h2>
-  <br>
-  <p><%= task.work %></p>
-  <p>
-    <!-- image_nameの項目を以下に変更 -->
-    <strong>Image:</strong>
-  <br>
+    <% @tasks.each_with_index do |task, i| %>
+      <h2>本日のやること<%= i + 1 %></h2>
+      <br>
+      <p><%= task.work %></p>
+      <p>
+        <!-- image_nameの項目を以下に変更 -->
+        <strong>Image:</strong>
+        <br>
 
-    <% if task.image? %>
-      <%= image_tag(task.image.url) if task.image && task.image.url %>
-    <% else %>
-      <%= image_tag '/event_images/1628159855895.jpg', size:600px %>
+        <% if task.image? %>
+          <%= image_tag(task.image.url) if task.image && task.image.url %>
+        <% else %>
+          <%= image_tag '/event_images/1626917741193.jpg', width: '50%', height: '50%' %>
+        <% end %>
+
+      </p>
     <% end %>
-  </p>
-  <% end %>
 
-  <% if user_signed_in? && current_user.id == @event.user_id %>
-  <%= link_to '編集', edit_event_path %>
-  <%= link_to '削除', event_path(@event.id), method: :delete %>
-  <% end %>
+<div class="bule-button">
+  <div class="button">
+    <% if user_signed_in? && current_user.id == @event.user_id %>
+      <%= link_to '編集', edit_event_path, class:"btn_03" %>
+      <%= link_to '削除', event_path(@event.id), method: :delete, class:"btn_03" %>
+    <% end %>
+
+  </div>
+</div>
 
 
+
+  </table>
 </div>

@@ -14,10 +14,10 @@
       <td><%= manufacture.indoor_temperature %></td>
       <td><%= manufacture.soil_temperature %></td>
       <td><%= manufacture.humidity %></td>
-      <td><%= link_to '詳細', manufacture_path(manufacture.id) %></td>
+      <td><%= link_to '詳細', manufacture_path(manufacture.id), class:"btn_03" %></td>
       <% if user_signed_in? && current_user.id == manufacture.user_id %>
-      <td><%= link_to '編集', edit_manufacture_path(manufacture.id) %></td>
-      <td><%= link_to '削除', manufacture_path(manufacture.id), method: :delete %></td>
+      <td><%= link_to '編集', edit_manufacture_path(manufacture.id), class:"btn_03" %></td>
+      <td><%= link_to '削除', manufacture_path(manufacture.id), method: :delete, class:"btn_03" %></td>
       <% end %>
     </tr>
   <% end %>

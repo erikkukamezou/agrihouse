@@ -15,22 +15,36 @@
   <div class="dairy_title">
     <%= form.label :タイトル %>
     <br>
+    <br>
     <%= form.text_field :title, :placeholder => "タイトルを入力" %>
   </div>
+  <br>
   <br>
   <div class="dairy_content">
     <%= form.label :内容 %>
     <br>
+    <br>
     <%= form.text_field :content, :placeholder => "内容を入力" %>
   </div>
+  <br>
   <br>
   <div class="dairy_image">
     <%= form.label :image %>
     <br>
+    <br>
     <%= form.file_field :image %>
   </div>
   <br>
-  <%= form.submit %>
-<% end %>
+  <br>
+  <div class="dairy_button">
+    <%= form.submit %>
+  </div>
 
+  <br>
+  <br>
+  <br>
+  <br>
+<% end %>
+<br>
+<br>
 </div>

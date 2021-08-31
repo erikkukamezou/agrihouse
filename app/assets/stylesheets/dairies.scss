@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 h1 {
   color: red;
-  font-size: 20px
+  // font-size: 20px
 }
 .accordion-container .accordion-title {
   color: #fff;
@@ -67,12 +67,17 @@ h1 {
 }
 
 #dairy_image {
-  margin-left: 700px;
+  margin-left: 800px;
   // background-color: red;
 }
 
+.dairy_button{
+  margin-left: 200px;
+
+}
+
 .dairies {
-  margin-left: 500px;
+  // margin-left: 500px;
 }
 
 // .btn{
@@ -98,3 +103,76 @@ h1 {
 //   box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
 //   border-bottom: solid 2px #ffa851;
 // }
+
+.textOverflowTest1 {
+  overflow: hidden;
+	// border: 1px solid #ccc;
+	padding: 10px;
+	width: 400px;
+	// background: #eee;
+	line-height: 1.0;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-webkit-text-overflow: ellipsis; /* Safari */
+	-o-text-overflow: ellipsis; /* Opera */
+}
+
+.dairy table {
+  margin: 0 auto;
+}
+
+.dairy th {
+  border: solid 1px black;
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+.dairy td {
+  border: solid 1px black;
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+a.btn_03 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  position: relative;
+  background: #228bc8;
+  border: 1px solid #228bc8;
+  border-radius: 30px;
+  box-sizing: border-box;
+  padding: 0 45px 0 25px;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  line-height: 1.3;
+  text-align: left;
+  text-decoration: none;
+  transition-duration: 0.3s;
+}
+a.btn_03:before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border: 0;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  margin-top: -6px;
+}
+a.btn_03:hover {
+  background: #fff;
+  color: #228bc8;
+}
+a.btn_03:hover:before {
+  border-top: 2px solid #228bc8;
+  border-right: 2px solid #228bc8;
+}
+
+.side-con {
+  overflow:hidden;
+}

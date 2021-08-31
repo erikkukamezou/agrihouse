@@ -10,6 +10,7 @@
       <th>肥料（円）</th>
       <th>土（円）</th>
       <th>苗・種（円）</th>
+      <th></th>
     </tr>
   <% @costs.each do |cost| %>
     <tr>
@@ -17,10 +18,10 @@
       <td><%= cost.fertilizer %></td>
       <td><%= cost.soil %></td>
       <td><%= cost.seed %></td>
-      <td><%= link_to '詳細', cost_path(cost.id) %></td>
+      <td><%= link_to '詳細', cost_path(cost.id), class:"btn_03" %></td>
       <% if user_signed_in? && current_user.id == cost.user_id %>
-      <td><%= link_to '編集', edit_cost_path(cost.id) %></td>
-      <td><%= link_to '削除', cost_path(cost.id), method: :delete %></td>
+      <td><%= link_to '編集', edit_cost_path(cost.id), class:"btn_03" %></td>
+      <td><%= link_to '削除', cost_path(cost.id), method: :delete, class:"btn_03" %></td>
       <% end %>
     </tr>
   <% end %>

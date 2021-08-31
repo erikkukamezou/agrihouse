@@ -11,16 +11,19 @@
 <div class="dairies">
   <table>
     <tr>
-      <th colspan="3"></th>
+      <th>タイトル</th>
+      <th class = "textOverflowTest1">内容</th>
     </tr>
+    <br>
+
   <% @dairies.each do |dairy| %>
     <tr>
       <td><%= dairy.title %></td>
       <td><%= dairy.content %></td>
-      <td = "btn"><%= link_to '詳細', dairy_path(dairy.id) %></td>
+      <td = "btn"><%= link_to '詳細', dairy_path(dairy.id), class:"btn_03" %></td>
       <% if user_signed_in? && current_user.id == dairy.user_id %>
-      <td><%= link_to '編集', edit_dairy_path(dairy.id) %></td>
-      <td><%= link_to '削除', dairy_path(dairy.id), method: :delete %></td>
+      <td><%= link_to '編集', edit_dairy_path(dairy.id), class:"btn_03" %></td>
+      <td><%= link_to '削除', dairy_path(dairy.id), method: :delete, class:"btn_03" %></td>
       <% end %>
 
     </tr>
