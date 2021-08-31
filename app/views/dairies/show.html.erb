@@ -2,16 +2,16 @@
   <h1>詳細画面</h1>
   <p>タイトル: <%= @dairy.title %></p>
   <p>内容: <%= @dairy.content %></p>
-  <p>
+  <div class = image_dairy>
     <% if @dairy.image? %>
-      <%= image_tag(@dairy.image.url) if @dairy.image && @dairy.image.url %>
+      <%= image_tag(@dairy.image.url, :size =>'320x480') if @dairy.image && @dairy.image.url %>
     <% else %>
-      <%= image_tag '/dairy_images/1628159855895.jpg' %>
+      <%= image_tag '/dairy_images/1628159855895.jpg', :size =>'320x400' %>
     <% end %>
 
-  </p>
+  </div>
 
-
+<div class="commet-commet">
   <p>コメント</p>
   <div class="new-comment">
     <%= form_with(model:[@dairy, @comment]) do |f| %>
@@ -22,8 +22,9 @@
     <% end %>
   </div>
 
-  <p>コメント一覧</p>
+
   <div class="comments">
+    <p>コメント一覧</p>
     <% if @dairy.comments.present? %>
     <p>コメント件数：<%= @comments.count %></p>
 
@@ -40,6 +41,8 @@
     <p>コメントはまだありません</p>
     <% end %>
   </div>
+
+</div>
 
 
 </div>
