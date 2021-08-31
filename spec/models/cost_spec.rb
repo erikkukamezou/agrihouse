@@ -18,6 +18,24 @@ RSpec.describe Cost, type: :model do
       end
     end
 
+    context '入力数が5文字以上の場合' do
+      it 'バリデーションにひっかる' do
+        cost = FactoryBot.build(:cost)
+        cost.soil = 8888888
+        expect(cost).not_to be_valid
+      end
+    end
+
+    context '入力数が5文字以下の場合' do
+      it 'バリデーションにひっかる' do
+        cost = FactoryBot.build(:cost)
+        cost.soil = 88
+        expect(cost).to be_valid
+      end
+    end
+
+
+
     context '収穫量が入力済の場合' do
       it 'バリデーションに通る' do
         cost = FactoryBot.build(:cost)
@@ -31,6 +49,22 @@ RSpec.describe Cost, type: :model do
         cost = FactoryBot.build(:cost)
         cost.fertilizer = nil
         expect(cost).not_to be_valid
+      end
+    end
+
+    context '入力数が5文字以上の場合' do
+      it 'バリデーションにひっかる' do
+        cost = FactoryBot.build(:cost)
+        cost.fertilizer = 77777777
+        expect(cost).not_to be_valid
+      end
+    end
+
+    context '入力数が5文字以下の場合' do
+      it 'バリデーションに通る' do
+        cost = FactoryBot.build(:cost)
+        cost.fertilizer = 7
+        expect(cost).to be_valid
       end
     end
 
@@ -50,6 +84,22 @@ RSpec.describe Cost, type: :model do
       end
     end
 
+    context '入力数が5文字以上の場合' do
+      it 'バリデーションにひっかかる' do
+        cost = FactoryBot.build(:cost)
+        cost.seed = 77777777
+        expect(cost).not_to be_valid
+      end
+    end
+
+    context '入力数が5文字以下の場合' do
+      it 'バリデーションに通る' do
+        cost = FactoryBot.build(:cost)
+        cost.seed = 7
+        expect(cost).to be_valid
+      end
+    end
+
     context '売り上げが入力済の場合' do
       it 'バリデーションに通る' do
         cost = FactoryBot.build(:cost)
@@ -62,6 +112,21 @@ RSpec.describe Cost, type: :model do
         cost = FactoryBot.build(:cost)
         cost.sale = nil
         expect(cost).not_to be_valid
+      end
+    end
+
+    context '入力数が5文字以上の場合' do
+      it 'バリデーションにひっかかる' do
+        cost = FactoryBot.build(:cost)
+        cost.sale = 88888888
+        expect(cost).not_to be_valid
+      end
+    end
+    context '入力数が5文字以下の場合' do
+      it 'バリデーションに通る' do
+        cost = FactoryBot.build(:cost)
+        cost.sale = 88
+        expect(cost).to be_valid
       end
     end
   end
