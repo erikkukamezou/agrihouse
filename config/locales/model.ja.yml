@@ -28,7 +28,7 @@ ja:
         content: 内容
         image: 写真
       event:
-        content: 内容
+        title: 内容
         start_date: 開始日
         end_date: 終了日
       event/tasks:

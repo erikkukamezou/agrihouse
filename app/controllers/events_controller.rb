@@ -82,7 +82,7 @@ class EventsController < ApplicationController
   # end
 
   def event_params
-    params.require(:event).permit(:content, :start_date, :end_date,
+    params.require(:event).permit(:title, :start_date, :end_date,
     tasks_attributes: [:id, :_destroy, :work, :image, :event_id]
   )#.merge(user_id: current_user.id)
   end

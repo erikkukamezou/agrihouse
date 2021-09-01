@@ -15,7 +15,7 @@ RSpec.describe Event, type: :model do
         # event = Event.new(content: "")
         # task = Task.new(work: "aa")
         # event = Event.new(content: '', start_date: DateTime.now, end_date: DateTime.now + 10, user_id: @user)
-        event.content = nil
+        event.title = nil
         expect(event).not_to be_valid
         # expect(event.valid?).to eq(false)
 

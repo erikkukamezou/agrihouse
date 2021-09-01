@@ -15,7 +15,7 @@ RSpec.describe 'イベント管理機能', type: :system do
     context 'イベントを新規作成した場合' do
       it '作成したイベントが表示される' do
         visit new_event_path
-        fill_in 'event[content]', with: 'testtest'
+        fill_in 'event[title]', with: 'testtest'
         select '2022', from: 'event[start_date(1i)]'
         select '12', from: 'event[start_date(2i)]'
         select '22', from: 'event[start_date(3i)]'
