@@ -5,9 +5,9 @@ class DairiesController < ApplicationController
   # before_action :set_q, only: [:index, :search]
   def index
     # render layout: "sidebar.html.erb"
-    # @dairies = Dairy.all
+    # @dairies = Dairy.page(params[:page]).per(10)
     @q = Dairy.ransack(params[:q])
-    @dairies = @q.result(distinct: true)
+    @dairies = @q.result(distinct: true).page(params[:page]).per(10)
   end
 
   def new
