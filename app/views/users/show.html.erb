@@ -3,11 +3,11 @@
   <br>
   <%= @user.name %>さん
 
-  <div class="introduction">
-
+  <div class="introduction">自己紹介
+    <%= @user.introdution %>
   </div>
 
-  <div class="avatar">
+  <div class="avatar">プロフィール写真
   <% if @user.avatar? %>
   　<%= image_tag @user.avatar.url %>
 　

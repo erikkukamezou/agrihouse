@@ -11,6 +11,17 @@
       <%= f.text_field :name, autofocus: true, :placeholder => "名前を入力" %>
     </div>
 
+    <div class="field">
+      <%= f.label :自己紹介 %>
+      <%= f.text_area :introdution, :placeholder => "自分のことについてなんでもどうぞ！" %>
+
+    </div>
+
+    <div class="field">
+      <%= f.label :プロフィール画像 %>
+      <%= f.file_field :avatar %>
+    </div>
+
     <br>
     <br>
     <div class="field">
