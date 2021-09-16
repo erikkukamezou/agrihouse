@@ -6,7 +6,9 @@ class EventsController < ApplicationController
 
 
   def index
-    @events = Event.all
+    # @events = Event.all
+    @q = Event.ransack(params[:q])
+    @events = @q.result(distinct: true)
     # @events = current_user.events
   end
 
