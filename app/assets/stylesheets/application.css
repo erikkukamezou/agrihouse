@@ -54,16 +54,16 @@
     overflow: hidden;
   }
 
-  
+  .side-menu {
+    background-color: #fa8072;
+    width: 200px;
+    float: left;
+    padding-bottom: 10000px;
+    margin-bottom: -10000px;
+  }
 
 
-
-
-
-
-
-
-
+ 
 
 
 .footer {

@@ -11,6 +11,42 @@
 
   <body data-turbolinks="false">
     <header class="header">
+
+
+
+
+      <aside id="sidebar" class="scroll">
+    <nav id="global-nav">
+      <%= render'layouts/sidebar' %>
+      
+
+        <ul>
+            <li><a href="#">ホーム</a></li>
+            <li class="sub-menu">
+                <a href="#" class="sub-menu-head">About</a>
+                <ul class="sub-menu-nav">
+                    <li><a href="#">About 1</a></li>
+                    <li><a href="#">About 2</a></li>
+                </ul>
+            </li>
+            <!-- <li class="sub-menu">
+                <a href="#" class="sub-menu-head">Products</a>
+                <ul class="sub-menu-nav">
+                    <li><a href="#">Product 1</a></li>
+                    <li><a href="#">Product 2</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Contact</a></li> -->
+        </ul>
+
+    </nav>
+</aside>
+
+
+
+
+
       <div class = "logo">アグリパーク</div>
      <div class="top_menu clearfix">
         <% if user_signed_in? %>
