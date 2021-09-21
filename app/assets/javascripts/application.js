@@ -82,13 +82,41 @@ $(function () {
     });
 });
 
-$(document).on('turbolinks:load', function() {
-  $(function(){
-    $('.js-accordion-title').on('click', function () {
-      /*クリックでコンテンツを開閉*/
-      $(this).next().slideToggle(200);
-      /*矢印の向きを変更*/
-      $(this).toggleClass('open', 200);
+// $(document).on('turbolinks:load', function() {
+//   $(function(){
+//     $('.js-accordion-title').on('click', function () {
+//       /*クリックでコンテンツを開閉*/
+//       $(this).next().slideToggle(200);
+//       /*矢印の向きを変更*/
+//       $(this).toggleClass('open', 200);
+//     });
+//   });
+// });
+
+
+<script type="text/javascript">
+(function($) {
+    $(function () {
+
+        // サイドサブメニューアコーディオン
+        $('.sub-menu-head').on('click', function(){
+            var $subNav = $(this).next('.sub-menu-nav');
+            if ($subNav.is(':visible')) {
+                $subNav.velocity('slideUp', {duration: 200});
+                $(this).parent('li').removeClass('is-active');
+            }
+            else {
+                $subNav.velocity('slideDown', {duration: 200});
+                $(this).parent('li').addClass('is-active');
+            }
+            return false;
+        });
+
+        $('#nav-toggle').on('click', function() {
+            $('body').toggleClass('close');
+        });
+
+        $('.scroll').perfectScrollbar();
     });
-  });
-});
+})(jQuery);
+</script>
