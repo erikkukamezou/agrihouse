@@ -17,8 +17,9 @@
 
       <aside id="sidebar" class="scroll">
     <nav id="global-nav">
+      <% if user_signed_in? %>
       <%= render'layouts/sidebar' %>
-      
+      <% end %>
 
         <ul>
             <li><a href="#">ホーム</a></li>
