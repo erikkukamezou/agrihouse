@@ -12,31 +12,31 @@ User.create!(
     email: "admin@example.jp",
     password: "adminadmin",
     admin: true,
-  },
-  {
-    name: "本田",
-    email: "aaa@aaa.com",
-    password: "aaaaaa",
-    admin: false,
-  },
-  {
-    name: "島村",
-    email: "ccc@ccc.com",
-    password: "cccccc",
-    admin: false,
-  },
-  {
-    name: "渋谷",
-    email: "ddd@ddd.com",
-    password: "dddddd",
-    admin: false
-  },
-  {
-    name: "高垣",
-    email: "eee@eee.com",
-    password: "eeeeee",
-    admin: false
   }
+  # {
+  #   name: "本田",
+  #   email: "aaa@aaa.com",
+  #   password: "aaaaaa",
+  #   admin: false,
+  # },
+  # {
+  #   name: "島村",
+  #   email: "ccc@ccc.com",
+  #   password: "cccccc",
+  #   admin: false,
+  # },
+  # {
+  #   name: "渋谷",
+  #   email: "ddd@ddd.com",
+  #   password: "dddddd",
+  #   admin: false
+  # },
+  # {
+  #   name: "高垣",
+  #   email: "eee@eee.com",
+  #   password: "eeeeee",
+  #   admin: false
+  # }
  ]
 )
 
