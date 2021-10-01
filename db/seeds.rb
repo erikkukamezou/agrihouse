@@ -40,79 +40,79 @@ User.create!(
  ]
 )
 
-User.all.each do |user|
-  user.manufactures.create!(
-    [
-      {
-        harvest: 100,
-        indoor_temperature: 30,
-        soil_temperature: 15,
-        humidity: 40,
-      },
-      {
-        harvest: 200,
-        indoor_temperature: 31,
-        soil_temperature: 18,
-        humidity: 80,
-      },
-      {
-        harvest: 150,
-        indoor_temperature: 34,
-        soil_temperature: 25,
-        humidity: 20,
-      },
-      {
-        harvest: 180,
-        indoor_temperature: 28,
-        soil_temperature: 12,
-        humidity: 27
-      },
-      {
-        harvest: 300,
-        indoor_temperature: 29,
-        soil_temperature: 19,
-        humidity: 35
-      }
-    ]
-  )
-end
+# User.all.each do |user|
+#   user.manufactures.create!(
+#     [
+#       {
+#         harvest: 100,
+#         indoor_temperature: 30,
+#         soil_temperature: 15,
+#         humidity: 40,
+#       },
+#       {
+#         harvest: 200,
+#         indoor_temperature: 31,
+#         soil_temperature: 18,
+#         humidity: 80,
+#       },
+#       {
+#         harvest: 150,
+#         indoor_temperature: 34,
+#         soil_temperature: 25,
+#         humidity: 20,
+#       },
+#       {
+#         harvest: 180,
+#         indoor_temperature: 28,
+#         soil_temperature: 12,
+#         humidity: 27
+#       },
+#       {
+#         harvest: 300,
+#         indoor_temperature: 29,
+#         soil_temperature: 19,
+#         humidity: 35
+#       }
+#     ]
+#   )
+# end
 
-User.all.each do |user|
-  user.costs.create!(
-    [
-      {
-        sale: 15000,
-        fertilizer: 3000,
-        soil: 1000,
-        seed: 2000
-      },
-      {
-        sale: 10000,
-        fertilizer: 4000,
-        soil: 200,
-        seed: 150
-      },
-      {
-        sale: 8000,
-        fertilizer: 500,
-        soil: 0,
-        seed: 0
-      },
-      {
-        sale: 20000,
-        fertilizer: 100,
-        soil: 500,
-        seed: 100
-      },
-      {
-        sale: 5000,
-        fertilizer: 2000,
-        soil: 1000,
-        seed: 2000
-      }
-    ]
-  )
-end
+# User.all.each do |user|
+#   user.costs.create!(
+#     [
+#       {
+#         sale: 15000,
+#         fertilizer: 3000,
+#         soil: 1000,
+#         seed: 2000
+#       },
+#       {
+#         sale: 10000,
+#         fertilizer: 4000,
+#         soil: 200,
+#         seed: 150
+#       },
+#       {
+#         sale: 8000,
+#         fertilizer: 500,
+#         soil: 0,
+#         seed: 0
+#       },
+#       {
+#         sale: 20000,
+#         fertilizer: 100,
+#         soil: 500,
+#         seed: 100
+#       },
+#       {
+#         sale: 5000,
+#         fertilizer: 2000,
+#         soil: 1000,
+#         seed: 2000
+#       }
+#     ]
+#   )
+# end
 
 User.all.each do |user|
   user.dairies.create!(
