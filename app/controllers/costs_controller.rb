@@ -6,7 +6,8 @@ class CostsController < ApplicationController
 
 
   def index
-    @costs = Cost.all
+    @costs = Cost.all.page(params[:page]).per(10)
+    # @costs = Cost.page(params[:page]).per(10)
     # @q = Cost.ransack(params[:q])
     # @costs = @q.result(distinct: true)
   end

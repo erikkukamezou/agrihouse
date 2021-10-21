@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_15_142735) do
+ActiveRecord::Schema.define(version: 2021_10_15_131625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 2021_09_15_142735) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.date "date"
+    t.text "weather"
+    t.integer "atmospheric_temperature"
     t.index ["user_id"], name: "index_manufactures_on_user_id"
   end
 

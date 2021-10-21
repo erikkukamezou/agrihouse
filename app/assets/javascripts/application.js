@@ -82,41 +82,44 @@ $(function () {
     });
 });
 
-// $(document).on('turbolinks:load', function() {
-//   $(function(){
-//     $('.js-accordion-title').on('click', function () {
-//       /*クリックでコンテンツを開閉*/
-//       $(this).next().slideToggle(200);
-//       /*矢印の向きを変更*/
-//       $(this).toggleClass('open', 200);
-//     });
-//   });
-// });
-
-
-<script type="text/javascript">
-(function($) {
-    $(function () {
-
-        // サイドサブメニューアコーディオン
-        $('.sub-menu-head').on('click', function(){
-            var $subNav = $(this).next('.sub-menu-nav');
-            if ($subNav.is(':visible')) {
-                $subNav.velocity('slideUp', {duration: 200});
-                $(this).parent('li').removeClass('is-active');
-            }
-            else {
-                $subNav.velocity('slideDown', {duration: 200});
-                $(this).parent('li').addClass('is-active');
-            }
-            return false;
-        });
-
-        $('#nav-toggle').on('click', function() {
-            $('body').toggleClass('close');
-        });
-
-        $('.scroll').perfectScrollbar();
+$(document).on('turbolinks:load', function() {
+  $(function(){
+    $('.js-accordion-title').on('click', function () {
+      /*クリックでコンテンツを開閉*/
+      $(this).next().slideToggle(200);
+      /*矢印の向きを変更*/
+      $(this).toggleClass('open', 200);
     });
-})(jQuery);
-</script>
+  });
+});
+
+// <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+// <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js"></script>
+// <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.8.1/js/perfect-scrollbar.jquery.min.js"></script>
+// <script type="text/javascript">
+// // <script type="text/javascript">
+// (function($) {
+//     $(function () {
+//
+//         // サイドサブメニューアコーディオン
+//         $('.sub-menu-head').on('click', function(){
+//             var $subNav = $(this).next('.sub-menu-nav');
+//             if ($subNav.is(':visible')) {
+//                 $subNav.velocity('slideUp', {duration: 200});
+//                 $(this).parent('li').removeClass('is-active');
+//             }
+//             else {
+//                 $subNav.velocity('slideDown', {duration: 200});
+//                 $(this).parent('li').addClass('is-active');
+//             }
+//             return false;
+//         });
+//
+//         $('#nav-toggle').on('click', function() {
+//             $('body').toggleClass('close');
+//         });
+//
+//         $('.scroll').perfectScrollbar();
+//     });
+// })(jQuery);
+// </script>

@@ -5,7 +5,7 @@ class ManufacturesController < ApplicationController
   # before_action :set_q, only: [:index, :search]
 
   def index
-    @manufactures = Manufacture.all
+    @manufactures = Manufacture.all.page(params[:page]).per(10)
   end
 
   def new
