@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'src': 'jquery.min.js' %>
+    <%= javascript_include_tag 'application', 'src': 'jquery.sidebar.min.js' %>
+    <!-- <script{src: "//code.jquery.com/jquery-1.10.2.min.js" } </script> -->
+    <!-- <script{src: "//jillix.github.io/jQuery-sidebar/js/handlers.js" } </script> -->
+
   </head>
 
   <body data-turbolinks="false">
@@ -15,34 +20,17 @@
 
 
 
+
+
       <aside id="sidebar" class="scroll">
-    <nav id="global-nav">
-      <% if user_signed_in? %>
-      <%= render'layouts/sidebar' %>
-      <% end %>
+          <nav id="global-nav">
+            <% if user_signed_in? %>
+              <%= render'layouts/sidebar' %>
+            <% end %>
 
-        <!-- <ul>
-            <li><a href="#">ホーム</a></li>
-            <li class="sub-menu">
-                <a href="#" class="sub-menu-head">About</a>
-                <ul class="sub-menu-nav">
-                    <li><a href="#">About 1</a></li>
-                    <li><a href="#">About 2</a></li>
-                </ul>
-            </li>
-            <!-- <li class="sub-menu">
-                <a href="#" class="sub-menu-head">Products</a>
-                <ul class="sub-menu-nav">
-                    <li><a href="#">Product 1</a></li>
-                    <li><a href="#">Product 2</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Contact</a></li> -->
-        <!-- </ul> -->
 
-    </nav>
-</aside>
+          </nav>
+      </aside>
 
 
 
@@ -75,9 +63,9 @@
       <% end %>
     </div>
 
-
+<div class="main-container">
     <%= yield %>
-
+</div>
     <footer class="footer">
       <p class = "pfooter">🄫 2021 アグリパーク.</p>
     </footer>

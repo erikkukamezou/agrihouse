@@ -111,7 +111,52 @@ li {
   list-style: none;
 }
 
+.sidebar{
+    position: fixed;
+}
 
+/* h2 {
+  right: 20px;
+} */
+
+.listings_header {
+  left: 200px;
+  /* vertical-align: middle; */
+  text-align: center;
+  /* color: red; */
+}
+
+.sidebar.left {
+    top: 100px;
+    left: 0;
+    bottom: 0;
+}
+
+/* .img{
+  position: relative;
+  background-image: url("<%= asset_path('autumn-279408_960_720.jpg') %>");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+.img::before{
+  content: '';
+  display: block;
+  padding-top: 50%;
+} */
+
+.main-container {
+  /* background-image: url('/autumn-279408_960_720.jpg'); */
+  /* C:\Users\erikk\workspace\agripark\app\assets\images\autumn-279408_960_720.jpg */
+  /* height: 900px; */
+  background-size: cover;
+  /* background-color: red; */
+  min-height: 100vh;
+  /* position: relative;/*←相対位置*/ */
+  /* padding-bottom: 120px;/*←footerの高さ*/ */
+  box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+}
 
 
 .footer {

@@ -4,8 +4,8 @@
   <table>
     <tr>
       <th>記録日</th>
-      <th>本日の天気</th>
-      <th>気温</th>
+      <!-- <th>本日の天気</th>
+      <th>気温</th> -->
       <th>収穫量（キロ）</th>
       <th>ハウス内の温度</th>
       <th>土の温度</th>
@@ -17,8 +17,7 @@
   <% @manufactures.each do |manufacture| %>
     <tr>
       <td><%= manufacture.created_at.strftime('%Y/%m/%d') %></td>
-      <td><%= manufacture.weather %></td>
-      <td><%= manufacture.atmospheric_temperature %></td>
+      
       <td><%= manufacture.harvest %></td>
       <td><%= manufacture.indoor_temperature %></td>
       <td><%= manufacture.soil_temperature %></td>
