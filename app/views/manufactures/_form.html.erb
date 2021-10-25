@@ -11,7 +11,10 @@
   </div>
 <% end %>
 
-
+  <div class="manufacture_date">
+    <%= form.label :記録日 %>
+    <%= form.date_field :date, :placeholder => "日付を入力" %>
+  </div>
   <div class="manufacture_harvest">
     <%= form.label :収穫量（キロ） %>
     <%= form.number_field :harvest, :placeholder => "数値を入力" %>

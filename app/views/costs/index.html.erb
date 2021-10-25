@@ -17,7 +17,7 @@
     </tr>
   <% @costs.each do |cost| %>
     <tr>
-      <td><%= cost.created_at.strftime('%Y/%m/%d') %></td>
+      <td><%= cost.record_date %></td>
       <td><%= cost.sale %></td>
       <td><%= cost.fertilizer %></td>
       <td><%= cost.soil %></td>

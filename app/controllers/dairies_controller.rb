@@ -80,7 +80,7 @@ class DairiesController < ApplicationController
   # end
 
   def dairy_params
-    params.require(:dairy).permit(:title, :content, :image)
+    params.require(:dairy).permit(:date, :title, :content, :image)
   end
 
   def set_dairy

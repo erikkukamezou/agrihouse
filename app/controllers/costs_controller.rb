@@ -63,7 +63,7 @@ class CostsController < ApplicationController
   # end
 
   def cost_params
-    params.require(:cost).permit(:sale, :fertilizer, :soil, :seed)
+    params.require(:cost).permit(:record_date, :sale, :fertilizer, :soil, :seed)
   end
 
   def set_cost

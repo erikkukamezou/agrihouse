@@ -16,8 +16,8 @@
     </tr>
   <% @manufactures.each do |manufacture| %>
     <tr>
-      <td><%= manufacture.created_at.strftime('%Y/%m/%d') %></td>
-      
+      <td><%= manufacture.date %></td>
+
       <td><%= manufacture.harvest %></td>
       <td><%= manufacture.indoor_temperature %></td>
       <td><%= manufacture.soil_temperature %></td>

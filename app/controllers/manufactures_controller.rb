@@ -64,7 +64,7 @@ class ManufacturesController < ApplicationController
   # end
 
   def manufacture_params
-    params.require(:manufacture).permit(:harvest, :indoor_temperature, :soil_temperature, :humidity)
+    params.require(:manufacture).permit(:date, :harvest, :indoor_temperature, :soil_temperature, :humidity)
   end
 
   def set_manufacture

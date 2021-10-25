@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+
+  <div class="cost_date">
+    <%= form.label :記録日 %>
+    <%= form.date_field :record_date, :placeholder => "日付を入力" %>
+  </div>
   <div class="cost_sale">
     <%= form.label :売り上げ金（円） %>
     <%= form.number_field :sale, :placeholder => "数値を入力" %>

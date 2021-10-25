@@ -11,6 +11,7 @@
 <div class="dairies">
   <table>
     <tr>
+      <th>記録日</th>
       <th>作成日</th>
       <th>タイトル</th>
       <th class = "textOverflowTest1">内容</th>
@@ -19,7 +20,7 @@
 
   <% @dairies.each do |dairy| %>
     <tr>
-      <td><%= dairy.created_at.strftime('%Y/%m/%d') %></td>
+      <td><%= dairy.date %></td>
       <td><%= dairy.title %></td>
       <td><%= dairy.content.truncate(20, omission: '~~~') %></td>
       <td = "btn"><%= link_to '詳細', dairy_path(dairy.id), class:"btn_03" %></td>

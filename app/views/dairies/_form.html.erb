@@ -11,7 +11,10 @@
     </div>
   <% end %>
 
-<div class="dairy">
+  <div class="dairy_date">
+    <%= form.label :記録日 %>
+    <%= form.date_field :date, :placeholder => "日付を入力" %>
+  </div>
   <div class="dairy_title">
     <%= form.label :タイトル %>
     <br>
@@ -32,7 +35,9 @@
     <%= form.label :image %>
     <br>
     <br>
+    <div class="image_field">
     <%= form.file_field :image %>
+    </div>
   </div>
   <br>
   <br>
