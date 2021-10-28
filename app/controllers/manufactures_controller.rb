@@ -6,6 +6,9 @@ class ManufacturesController < ApplicationController
 
   def index
     @manufactures = Manufacture.all.page(params[:page]).per(10)
+    # @manufactures = Manufacture.order(:date).select(:date)
+    # @manufacture = Manufacture.where
+    # Job.order(:day).select(:day)distinct
   end
 
   def new
@@ -24,7 +27,10 @@ class ManufacturesController < ApplicationController
 
   def show
     @manufacture_chart = [["収穫量",@manufacture.harvest],["ハウス内の温度",@manufacture.indoor_temperature],["土の温度",@manufacture.soil_temperature],["湿度",@manufacture.humidity]]
-
+    # @manufactures = Manufacture.where(date: '10-25').order(:date, :harvest, :indoor_temperature, :soil_temperature, :humidity)
+    # @manufacture = Manufacture.where(Manufacture.arel_table[:date].lteq 10-25)
+    # @manufacture = Manufacture.where("created_at <= ?", Time.now)
+    # Manufacture.where(date: 10-25)
   end
 
   def edit

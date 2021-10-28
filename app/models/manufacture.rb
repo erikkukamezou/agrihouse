@@ -4,4 +4,8 @@ class Manufacture < ApplicationRecord
   validates :harvest, presence: true, length: { in: 1..5 }
   validates :indoor_temperature, presence: true, length: { in: 1..5 }
   validates :soil_temperature, presence: true, length: { in: 1..5 }
+
+  # def to_param
+  #   date
+  # end
 end

@@ -1,15 +1,31 @@
 <div class="manufacture">
   <h1 class = "h1">生産管理</h1>
-
   <table>
+    <tr>
+   <th>収穫量</th>
+   <th>ハウスの温度（℃）</th>
+   <th>土の温度（℃）</th>
+   <th>湿度（℃）</th>
+    </tr>
+    <tr>
+   <td><%= line_chart Manufacture.pluck(:date, :harvest), width: '200px', height: '350px', colors: ['red'] %></td>
+   <td><%= line_chart Manufacture.pluck(:date, :indoor_temperature), width: '200px',height: '350px', colors: ['blue'] %></td>
+   <td><%= line_chart Manufacture.pluck(:date, :soil_temperature), width: '200px', height: '350px', colors: ['orange'] %></td>
+   <td><%= line_chart Manufacture.pluck(:date, :humidity), width: '200px', height: '350px', colors: ['pink'] %></td>
+    </tr>
+
+</table>
+<table>
+
+
     <tr>
       <th>記録日</th>
       <!-- <th>本日の天気</th>
       <th>気温</th> -->
-      <th>収穫量（キロ）</th>
-      <th>ハウス内の温度</th>
-      <th>土の温度</th>
-      <th>湿度</th>
+      <th>収穫量(キロ)</th>
+      <th>ハウスの温度(℃)</th>
+      <th>土の温度(℃)</th>
+      <th>湿度(℃)</th>
       <th></th>
       <th></th>
       <th></th>
@@ -25,8 +41,10 @@
       <td><%= link_to '詳細', manufacture_path(manufacture.id), class:"btn_03" %></td>
       <td><%= link_to '編集', edit_manufacture_path(manufacture.id), class:"btn_03" %></td>
       <td><%= link_to '削除', manufacture_path(manufacture.id), method: :delete, class:"btn_03" %></td>
+
     </tr>
   <% end %>
+
   </table>
 <%= paginate @manufactures %>
 

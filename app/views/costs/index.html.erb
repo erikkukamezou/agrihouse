@@ -4,6 +4,22 @@
 
 <h1>コスト一覧</h1>
 
+<table>
+  <tr>
+    <th>売り上げ（円）</th>
+    <th>肥料（円）</th>
+    <th>土（円）</th>
+    <th>苗・種（円）</th>
+  </tr>
+  <tr>
+ <td><%= line_chart Cost.pluck(:record_date, :sale), width: '200px', height: '350px', colors: ['red'] %></td>
+ <td><%= line_chart Cost.pluck(:record_date, :fertilizer), width: '200px',height: '350px', colors: ['blue'] %></td>
+ <td><%= line_chart Cost.pluck(:record_date, :soil), width: '200px', height: '350px', colors: ['orange'] %></td>
+ <td><%= line_chart Cost.pluck(:record_date, :seed), width: '200px', height: '350px', colors: ['pink'] %></td>
+  </tr>
+
+</table>
+
   <table>
     <tr>
       <th>記録日</th>

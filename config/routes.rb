@@ -42,6 +42,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  # resources :manufactures, param: :date
   resources :manufactures do
     collection do
       get 'search'
