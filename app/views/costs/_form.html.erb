@@ -11,26 +11,31 @@
     </div>
   <% end %>
 
+  <table>
+    <tr>
+      <th><%= form.label :記録日 %></th>
+      <td><%= form.date_field :record_date, :placeholder => "日付を入力" %></td>
+    </tr>
+  </table>
 
-  <div class="cost_date">
-    <%= form.label :記録日 %>
-    <%= form.date_field :record_date, :placeholder => "日付を入力" %>
-  </div>
-  <div class="cost_sale">
-    <%= form.label :売り上げ金（円） %>
-    <%= form.number_field :sale, :placeholder => "数値を入力" %>
-  </div>
-  <div class="cost_fertilizer">
-    <%= form.label :肥料（円） %>
-    <%= form.number_field :fertilizer, :placeholder => "数値を入力" %>
-  </div>
-  <div class="cost_soil">
-    <%= form.label :土の費用（円） %>
-    <%= form.number_field :soil, :placeholder => "数値を入力" %>
-  </div>
-  <div class="cost_seed">
-    <%= form.label :苗・種の費用（円） %>
-    <%= form.number_field :seed, :placeholder => "数値を入力" %>
-  </div>
-  <%= form.submit %>
+<br>
+<table>
+  <tr>
+    <th><%= form.label :売り上げ金（円） %></th>
+    <td><%= form.number_field :sale, :placeholder => "数値を入力" %></td>
+    <th><%= form.label :肥料（円） %></th>
+    <td><%= form.number_field :fertilizer, :placeholder => "数値を入力" %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :土の費用（円） %></th>
+    <td><%= form.number_field :soil, :placeholder => "数値を入力" %></td>
+    <th><%= form.label :苗・種の費用（円） %></th>
+    <td><%= form.number_field :seed, :placeholder => "数値を入力" %></td>
+  </tr>
+</table>
+<br>
+  <th>登録するなら押してね！</th>
+  <td><%= form.submit %></td>
+
+
 <% end %>

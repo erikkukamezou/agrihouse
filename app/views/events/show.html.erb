@@ -15,7 +15,7 @@
       <p><%= task.work %></p>
       <div class = "image_task">
         <!-- image_nameの項目を以下に変更 -->
-        <strong>Image:</strong>
+        <strong>イメージ:</strong>
         <br>
 
         <% if task.image? %>
@@ -26,12 +26,17 @@
 
       </div>
     <% end %>
-
+<br>
 <div class="bule-button">
   <div class="button">
     <% if user_signed_in? && current_user.id == @event.user_id %>
-      <%= link_to '編集', edit_event_path, class:"btn_03" %>
-      <%= link_to '削除', event_path(@event.id), method: :delete, class:"btn_03" %>
+
+        <%= link_to '編集', edit_event_path, class:"btn_03" %>
+        <br>
+        <%= link_to '削除', event_path(@event.id), method: :delete, class:"btn_03" %>
+
+
+
     <% end %>
 
   </div>

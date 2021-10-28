@@ -2,40 +2,48 @@
   <h1 class = "h1">生産管理</h1>
   <table>
     <tr>
+       <th>気温</th>
        <th>収穫量</th>
        <th>ハウスの温度（℃）</th>
+       <th>土の温度（℃）</th>
     </tr>
     <tr>
-   <td><%= line_chart Manufacture.pluck(:date, :harvest), width: '200px', height: '350px', colors: ['red'] %></td>
-   <td><%= line_chart Manufacture.pluck(:date, :indoor_temperature), width: '200px',height: '350px', colors: ['blue'] %></td>
-
+     <td><%= line_chart Manufacture.pluck(:date, :atmospheric_temperature), width: '200px', height: '350px', colors: ['purple'] %></td>
+     <td><%= line_chart Manufacture.pluck(:date, :harvest), width: '200px', height: '350px', colors: ['red'] %></td>
+     <td><%= line_chart Manufacture.pluck(:date, :indoor_temperature), width: '200px',height: '350px', colors: ['blue'] %></td>
+     <td><%= line_chart Manufacture.pluck(:date, :soil_temperature), width: '200px', height: '350px', colors: ['orange'] %></td>
     </tr>
-
 </table>
+
 <table>
   <tr>
-    <th>土の温度（℃）</th>
     <th>湿度（℃）</th>
+    <th>風量（ｍ）</th>
+    <th>日射量（W／ｍ2）</th>
+    <th>降水量（％）</th>
+    <th>降水量（ｍ）</th>
   </tr>
   <tr>
-    <td><%= line_chart Manufacture.pluck(:date, :soil_temperature), width: '200px', height: '350px', colors: ['orange'] %></td>
     <td><%= line_chart Manufacture.pluck(:date, :humidity), width: '200px', height: '350px', colors: ['pink'] %></td>
+    <td><%= line_chart Manufacture.pluck(:date, :air), width: '200px', height: '350px', colors: ['gray'] %></td>
+    <td><%= line_chart Manufacture.pluck(:date, :solar), width: '200px', height: '350px', colors: ['brown'] %></td>
+    <td><%= line_chart Manufacture.pluck(:date, :precipitation), width: '200px', height: '350px', colors: ['violet'] %></td>
+    <td><%= line_chart Manufacture.pluck(:date, :precipitation), width: '200px', height: '350px', colors: ['yellow'] %></td>
   </tr>
 </table>
 
-
-
 <table>
-
-
     <tr>
       <th>記録日</th>
-      <!-- <th>本日の天気</th>
-      <th>気温</th> -->
+      <th>本日の天気</th>
+      <th>気温(℃)</th>
       <th>収穫量(キロ)</th>
       <th>ハウスの温度(℃)</th>
       <th>土の温度(℃)</th>
       <th>湿度(℃)</th>
+      <th>風量</th>
+      <th>日射量</th>
+      <th>降水量</th>
       <th></th>
       <th></th>
       <th></th>
@@ -43,19 +51,20 @@
   <% @manufactures.each do |manufacture| %>
     <tr>
       <td><%= manufacture.date %></td>
-
+      <td><%= manufacture.weather %></td>
+      <td><%= manufacture.atmospheric_temperature %></td>
       <td><%= manufacture.harvest %></td>
       <td><%= manufacture.indoor_temperature %></td>
       <td><%= manufacture.soil_temperature %></td>
       <td><%= manufacture.humidity %></td>
+      <td><%= manufacture.air %></td>
+      <td><%= manufacture.solar %></td>
+      <td><%= manufacture.precipitation %></td>
       <td><%= link_to '詳細', manufacture_path(manufacture.id), class:"btn_03" %></td>
       <td><%= link_to '編集', edit_manufacture_path(manufacture.id), class:"btn_03" %></td>
       <td><%= link_to '削除', manufacture_path(manufacture.id), method: :delete, class:"btn_03" %></td>
-
     </tr>
   <% end %>
-
   </table>
 <%= paginate @manufactures %>
-
 </div>

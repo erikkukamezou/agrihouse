@@ -11,25 +11,47 @@
   </div>
 <% end %>
 
-  <div class="manufacture_date">
-    <%= form.label :記録日 %>
-    <%= form.date_field :date, :placeholder => "日付を入力" %>
-  </div>
-  <div class="manufacture_harvest">
-    <%= form.label :収穫量（キロ） %>
-    <%= form.number_field :harvest, :placeholder => "数値を入力" %>
-  </div>
-  <div class="manufacture_indoor_temperature">
-    <%= form.label :ハウス内の温度 %>
-    <%= form.number_field :indoor_temperature, :placeholder => "数値を入力" %>
-  </div>
-  <div class="manufacture_soil_temperature">
-    <%= form.label :土の温度 %>
-    <%= form.number_field :soil_temperature, :placeholder => "数値を入力" %>
-  </div>
-  <div class="manufacture_humidity">
-    <%= form.label :湿度 %>
-    <%= form.number_field :humidity, :placeholder => "数値を入力" %>
-  </div>
-  <%= form.submit %>
+<table>
+  <tr>
+    <th><%= form.label :記録日 %></th>
+    <td><%= form.date_field :date, :placeholder => "日付を入力" %></td>
+    <th><%= form.label :今日の天気 %></th>
+    <td><%= form.text_field :date, :placeholder => "天気を入力" %></td>
+  </tr>
+
+  <tr>
+    <th><%= form.label :気温【℃】 %></th>
+    <td><%= form.number_field :atmospheric_temperature, :placeholder => "数値を入力" %></td>
+    <th><%= form.label :収穫量【キロ】 %></th>
+    <td><%= form.number_field :harvest, :placeholder => "数値を入力" %></td>
+  </tr>
+
+  <tr>
+    <th><%= form.label :ハウス内の温度【℃】 %></th>
+    <td><%= form.number_field :indoor_temperature, :placeholder => "数値を入力" %></td>
+    <th><%= form.label :土の温度【℃】 %></th>
+    <td><%= form.number_field :soil_temperature, :placeholder => "数値を入力" %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :湿度【℃】 %></th>
+    <td><%= form.number_field :humidity, :placeholder => "数値を入力" %></td>
+    <th><%= form.label :風量【ｍ】 %></th>
+    <td><%= form.number_field :air, :placeholder => "数値を入力" %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :日射量【W／ｍ2】 %></th>
+    <td><%= form.number_field :solar, :placeholder => "数値を入力" %></td>
+    <th><%= form.label :降水量【％】 %></th>
+    <td><%= form.number_field :precipitation, :placeholder => "数値を入力" %></td>
+  </tr>
+
+  <tr>
+    <th><%= form.label :降水量【ｍ】 %></th>
+    <td><%= form.number_field :precipitation, :placeholder => "数値を入力" %></td>
+  </tr>
+
+</table>
+<th>登録するなら押してね！</th>
+<td><%= form.submit %></td>
+
 <% end %>

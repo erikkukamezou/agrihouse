@@ -1,20 +1,43 @@
 <div class="manufacture">
   <h1>生産管理の詳細</h1>
   <br>
-  <p>記録日</p>
-  <%= @manufacture.date %>
-  <p>収穫量（キロ）</p>
-  <%= @manufacture.harvest %>
-  <p>ハウス内の温度（℃）</p>
-  <%= @manufacture.indoor_temperature %>
-  <p>土の温度（℃）</p>
-  <%= @manufacture.soil_temperature %>
-  <p>湿度（℃）</p>
-  <%= @manufacture.humidity %>
+  <table>
+    <tr>
+      <th>記録日</th>
+      <td><%= @manufacture.date %></td>
+    </tr>
+  </table>
+<br>
+  <table>
+    <tr>
+      <th>今日の天気</th>
+      <td><%= @manufacture.weather %></td>
+      <th>収穫量</th>
+      <td><%= @manufacture.harvest %>（キロ）</td>
+      <th>ハウス内の温度</th>
+      <td><%= @manufacture.indoor_temperature %>（℃）</td>
+    </tr>
+    <tr>
+      <th>土の温度</th>
+      <td><%= @manufacture.soil_temperature %>（℃）</td>
+      <th>湿度</th>
+      <td><%= @manufacture.humidity %>（℃）</td>
+      <th>風量</th>
+      <td><%= @manufacture.air %> (ｍ)</td>
+    </tr>
+    <tr>
+      <th>日射量</th>
+      <td><%= @manufacture.solar %> (Ｗ／ｍ2)</td>
+      <th>降水量</th>
+      <td><%= @manufacture.precipitation %> (%)</td>
+      <th>降水量</th>
+      <td><%= @manufacture.precipitation %> (m)</td>
+    </tr>
+  </table>
+<br>
   <div class="graph">
     <div class="column">
       <%= column_chart @manufacture_chart, xtitle: "種類", ytitle: "温度・キロ",width: "600px" %>
     </div>
-
   </div>
 </div>

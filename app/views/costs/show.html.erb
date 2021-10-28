@@ -1,11 +1,25 @@
 <div class="cost">
   <h1>詳細画面</h1>
-  <p>記録日 :<%= @cost.record_date %></p>
-  <p>売り上げ金（円）: <%= @cost.sale %>円</p>
-  <p>肥料（円）: <%= @cost.fertilizer %>円</p>
-  <p>土（円）: <%= @cost.soil %>円</p>
-  <p>種・苗（円）: <%= @cost.seed %>円</p>
-
+  <table>
+    <tr>
+      <th>記録日</th>
+      <td><%= @cost.record_date %></td>
+    </tr>
+  </table>
+<br>
+  <table>
+    <tr>
+      <th>売り上げ金</th>
+      <td><%= @cost.sale %>円</td>
+      <th>肥料</th>
+      <td><%= @cost.fertilizer %>円</td>
+      <th>土</th>
+      <td><%= @cost.soil %>円</td>
+      <th>種・苗</th>
+      <td><%= @cost.seed %>円</td>
+    </tr>
+  </table>
+  <br>
 <div class="chart">
   <div class="cost-chart">
     <%= column_chart @cost_chart, xtitle: "種類", ytitle: "円", width: "600px" %>

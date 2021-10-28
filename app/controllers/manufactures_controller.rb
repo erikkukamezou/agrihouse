@@ -29,7 +29,11 @@ class ManufacturesController < ApplicationController
   end
 
   def show
-    @manufacture_chart = [["収穫量",@manufacture.harvest],["ハウス内の温度",@manufacture.indoor_temperature],["土の温度",@manufacture.soil_temperature],["湿度",@manufacture.humidity]]
+    @manufacture_chart = [["収穫量",@manufacture.harvest],["ハウス内の温度",@manufacture.indoor_temperature],
+                          ["土の温度",@manufacture.soil_temperature],["湿度",@manufacture.humidity],
+                          ["風量",@manufacture.air],["日射量",@manufacture.solar],
+                          ["降水量【％】",@manufacture.precipitation],["降水量【ｍ】",@manufacture.precipitation]
+                        ]
     # @manufactures = Manufacture.where(date: '10-25').order(:date, :harvest, :indoor_temperature, :soil_temperature, :humidity)
     # @manufacture = Manufacture.where(Manufacture.arel_table[:date].lteq 10-25)
     # @manufacture = Manufacture.where("created_at <= ?", Time.now)
@@ -73,7 +77,7 @@ class ManufacturesController < ApplicationController
   # end
 
   def manufacture_params
-    params.require(:manufacture).permit(:date, :harvest, :indoor_temperature, :soil_temperature, :humidity)
+    params.require(:manufacture).permit(:date, :weather, :atmospheric_temperature, :harvest, :indoor_temperature, :soil_temperature, :humidity, :air, :solar, :precipitation)
   end
 
   def set_manufacture
