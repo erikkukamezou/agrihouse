@@ -5,7 +5,10 @@ class ManufacturesController < ApplicationController
   # before_action :set_q, only: [:index, :search]
 
   def index
-    @manufactures = Manufacture.all.page(params[:page]).per(10)
+    @q = Manufacture.ransack(params[:q])
+
+    @manufactures = @q.result(distinct: true).page(params[:page]).per(10)
+    # @manufactures = Manufacture.all.page(params[:page]).per(10)
     # @manufactures = Manufacture.order(:date).select(:date)
     # @manufacture = Manufacture.where
     # Job.order(:day).select(:day)distinct
