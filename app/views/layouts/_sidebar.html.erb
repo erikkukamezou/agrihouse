@@ -12,7 +12,6 @@
                 <div class = "sub-menu-head">
                   <li><%= link_to "トップページ", root_path %></li>
                   <li><%= link_to "マイページ", user_path(current_user.id) %></li>
-                  <li><%= link_to "業務ページ", users_path %></li>
                   <li><%= link_to "個人情報編集へ",  edit_user_registration_path %></li>
                     <% if user_signed_in? %>
                       <% if current_user.try(:admin?) %>

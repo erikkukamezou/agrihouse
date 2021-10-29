@@ -12,14 +12,13 @@
     <th>苗・種（円）</th>
   </tr>
   <tr>
- <td><%= line_chart Cost.pluck(:record_date, :sale), width: '200px', height: '350px', colors: ['red'] %></td>
- <td><%= line_chart Cost.pluck(:record_date, :fertilizer), width: '200px',height: '350px', colors: ['blue'] %></td>
- <td><%= line_chart Cost.pluck(:record_date, :soil), width: '200px', height: '350px', colors: ['orange'] %></td>
- <td><%= line_chart Cost.pluck(:record_date, :seed), width: '200px', height: '350px', colors: ['pink'] %></td>
+   <td><%= line_chart Cost.pluck(:record_date, :sale), width: '200px', height: '350px', colors: ['red'] %></td>
+   <td><%= line_chart Cost.pluck(:record_date, :fertilizer), width: '200px',height: '350px', colors: ['blue'] %></td>
+   <td><%= line_chart Cost.pluck(:record_date, :soil), width: '200px', height: '350px', colors: ['orange'] %></td>
+   <td><%= line_chart Cost.pluck(:record_date, :seed), width: '200px', height: '350px', colors: ['pink'] %></td>
   </tr>
-
 </table>
-
+<br>
   <table>
     <tr>
       <th>記録日</th>
@@ -45,5 +44,5 @@
   <% end %>
   </table>
 <%= paginate @costs %>
-
 </div>
+<br>

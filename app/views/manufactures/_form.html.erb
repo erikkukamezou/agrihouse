@@ -16,7 +16,7 @@
     <th><%= form.label :記録日 %></th>
     <td><%= form.date_field :date, :placeholder => "日付を入力" %></td>
     <th><%= form.label :今日の天気 %></th>
-    <td><%= form.text_field :date, :placeholder => "天気を入力" %></td>
+    <td><%= form.text_field :weather, :placeholder => "天気を入力" %></td>
   </tr>
 
   <tr>
@@ -33,7 +33,7 @@
     <td><%= form.number_field :soil_temperature, :placeholder => "数値を入力" %></td>
   </tr>
   <tr>
-    <th><%= form.label :湿度【℃】 %></th>
+    <th><%= form.label :湿度【％】 %></th>
     <td><%= form.number_field :humidity, :placeholder => "数値を入力" %></td>
     <th><%= form.label :風量【ｍ】 %></th>
     <td><%= form.number_field :air, :placeholder => "数値を入力" %></td>
