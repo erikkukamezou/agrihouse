@@ -1,5 +1,6 @@
 <div class="container">
     <nav class="menu">
+      <div class="img">
       <ul>
         <div class ="agripark">
           ～初めての方へ～<br>
@@ -25,22 +26,22 @@
             <%= button_to "マイページ", user_path(current_user.id), method: :get %>
         <% else %>
 
-          <p class = "col-sm-6 col-md-3">ゲストさんはこちらから</p>
+          <!-- <p class = "col-sm-6 col-md-3">ゲストさんはこちらから</p> -->
             <%= button_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: "normal_guest" %><br>
-          <p class = "col-sm-6 col-md-3">ユーザーさんはこちらから</p>
+          <!-- <p class = "col-sm-6 col-md-3">ユーザーさんはこちらから</p> -->
             <%= button_to "ユーザーログイン", new_user_session_path %><br>
-          <p class = "col-sm-6 col-md-3">ゲスト管理者さんはこちらから</p>
-            <%= button_to 'ゲスト管理者ログイン', users_admin_guest_sign_in_path, method: :post %><br>
-          <p class = "col-sm-6 col-md-3">新規登録されるかたはこちらから </p>
+          <!-- <p class = "col-sm-6 col-md-3">ゲスト管理者さんはこちらから</p> -->
+
+          <!-- <p class = "col-sm-6 col-md-3">新規登録されるかたはこちらから </p> -->
             <%= button_to "アカウント作成", new_user_registration_path, method: :get %>
         <% end %>
       </div>
     </nav>
-    <br>
-    <br>
-    <br>
-    <br>
+
   <article>
+
+
+
     <div class="contents">
       <ul class = "row">
 
@@ -48,7 +49,7 @@
 
         <!-- </div> -->
 
-        <ol class="col-sm-6 col-md-3">・生産管理 <br>
+        <!-- <ol class="col-sm-6 col-md-3">・生産管理 <br>
           温度や湿度、収穫量の記録ができます<br>
         </ol>
         <ol class="col-sm-6 col-md-3">・コスト管理 <br>
@@ -60,8 +61,9 @@
         </ol>
         <ol class="col-sm-6 col-md-3">・観察日記 <br>
           日々の作業から疑問の思ったこと、気づいたことなど文と写真で記録に残すことができます<br>
-        </ol>
+        </ol> -->
       </ul>
+    </div>
     </div>
   </article>
 </div>

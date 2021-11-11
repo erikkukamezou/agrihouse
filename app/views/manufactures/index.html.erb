@@ -61,8 +61,10 @@
       <td><%= manufacture.solar %></td>
       <td><%= manufacture.precipitation %></td>
       <td><%= link_to '詳細', manufacture_path(manufacture.id), class:"btn_03" %></td>
+      <% if user_signed_in? && current_user.id == manufacture.user_id %>
       <td><%= link_to '編集', edit_manufacture_path(manufacture.id), class:"btn_03" %></td>
       <td><%= link_to '削除', manufacture_path(manufacture.id), method: :delete, class:"btn_03" %></td>
+      <% end %>
     </tr>
   <% end %>
   </table>

@@ -7,6 +7,7 @@
   // background-color: red;
   // float: left;
   // margin:
+  // color: green;
 }
 
 .container {
@@ -26,3 +27,18 @@
   // background-color: red;
   text-align: center;
 }
+
+
+.img{
+  position: relative;
+  background-image: image-url('gahag-0084225872-1.jpg');
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+// .img::before{
+//   content: '';
+//   display: block;
+//   padding-top: 50%;
+// }
